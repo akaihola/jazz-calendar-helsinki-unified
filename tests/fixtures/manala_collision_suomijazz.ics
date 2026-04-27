@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//test//manala//EN
+BEGIN:VEVENT
+SUMMARY:Manala Afterwork Jazz feat. Olli Soikkeli at Ravintola Manala
+DESCRIPTION:Price: Vapaa pääsy. Notes: Vappuspecial! Kitaravirtuoosi Olli Soikkeli piipahtaa New Yorkista laukaisemaan Etu-Töölön svengaavimmat vappuetkot käyntiin housebandin säestyksellä vappuaattona 30.4. klo 17:00.
+LOCATION:Ravintola Manala\, Dagmarinkatu 2\, Helsinki\, FI
+UID:20260430T140000Z-8956-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260430T140000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260430T140000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+END:VCALENDAR

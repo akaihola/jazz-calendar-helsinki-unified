@@ -1,0 +1,8 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//test//missing-dtstart//EN
+BEGIN:VEVENT
+UID:missing-dtstart@test
+SUMMARY:Event with no DTSTART
+END:VEVENT
+END:VCALENDAR
