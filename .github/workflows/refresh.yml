@@ -1,0 +1,42 @@
+name: refresh
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.github/workflows/refresh.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: true
+      - uses: astral-sh/setup-uv@v8
+        with:
+          version: "0.11.x"
+      - run: uv sync --frozen
+      - run: uv run python -m jazz_calendar.merge
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain docs/calendar.ics)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs/calendar.ics
+            git commit -m "chore(feed): refresh $(date -u +%FT%TZ)"
+            git push
+          fi
