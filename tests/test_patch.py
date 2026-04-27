@@ -12,8 +12,10 @@ UTC = timezone.utc
 def _make(source: str, start: datetime, end: datetime) -> Event:
     e = Event()
     e["UID"] = "u@x"
-    e["DTSTART"] = start
-    e["DTEND"] = end
+    # ``Event.add`` wraps datetimes in ``vDDDTypes`` so ``.dt`` is available;
+    # plain ``__setitem__`` would store the raw ``datetime``.
+    e.add("DTSTART", start)
+    e.add("DTEND", end)
     e["X-JAZZHKI-SOURCE"] = source
     return e
 
