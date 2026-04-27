@@ -59,11 +59,11 @@ This is the only contract with consumers.
                        └──────────────┬───────────────┘
                                       │ runs
                                       ▼
-   ┌──────────────────┐   fetch    ┌────────────────┐    fetch    ┌────────────────────┐
-   │ suomijazz.com    │◀───────────│ merge.py       │────────────▶│ calendar.google.com│
-   │ (GigPress, ~73K) │            │ (Python+icalend.│            │ (Jazz-kalenteri,    │
-   └──────────────────┘            └────────┬───────┘             │  ~20MB historical)  │
-                                            │ writes              └────────────────────┘
+   ┌──────────────────┐   fetch    ┌──────────────────────┐ fetch ┌────────────────────┐
+   │ suomijazz.com    │◀───────────│ jazz_calendar.merge  │──────▶│ calendar.google.com│
+   │ (GigPress, ~73K) │            │ (Python + icalendar) │       │ (Jazz-kalenteri,   │
+   └──────────────────┘            └──────────┬───────────┘       │  ~20MB historical) │
+                                              │ writes            └────────────────────┘
                                             ▼
                                  docs/calendar.ics  (committed if changed)
                                             │
@@ -95,6 +95,7 @@ This is the only contract with consumers.
 │   ├── fixtures/                     # captured upstream samples
 │   ├── test_fetch.py
 │   ├── test_normalize.py
+│   ├── test_source.py
 │   ├── test_patch.py
 │   ├── test_dedup.py
 │   ├── test_window.py
@@ -158,7 +159,7 @@ Each component is a small Python module with a single responsibility, importable
 
 ### 4.7 `merge.py` — Orchestration
 
-- Reads `SUOMIJAZZ_URL` and `GCAL_URL` (overridable by env var for tests). Captures `now_utc = datetime.now(UTC)` once.
+- The two upstream URLs are module-level constants (`SUOMIJAZZ_URL`, `GCAL_URL`) and may be overridden by same-named environment variables (test seam). Captures `now_utc = datetime.now(UTC)` once.
 - Pipeline:
   1. `fetch_feed(SUOMIJAZZ_URL)` → `Calendar.from_ical(...)` → `tag_source(..., "suomijazz")` → `patch_event(...)` per event.
   2. `fetch_feed(GCAL_URL)` → `Calendar.from_ical(...)` → `tag_source(..., "gcal")` → `patch_event(...)` per event (no-op for gcal today).
@@ -228,9 +229,9 @@ When the key collides, keep the event whose source has higher priority. GCal > S
 
 ## 6. Time window
 
-- **Past floor:** `now_utc - 30 days`. Events older than this are dropped.
+- **Past floor:** an event is kept iff its `DTSTART_utc >= now_utc - 30 days` (or it is a recurring series whose `RRULE` keeps it alive past that floor; see §4.6).
 - **Future ceiling:** none. All future events are kept.
-- `now_utc` is captured once at the start of `merge.py` and reused for both filters, so the boundary is consistent within a run.
+- `now_utc` is captured once at the start of `jazz_calendar.merge` and reused for both filters, so the boundary is consistent within a run.
 
 ## 7. Failure handling
 
@@ -260,6 +261,7 @@ These three commands cover ~all expected diagnostics.
 - **Unit tests** (`pytest`) cover every module listed in §4 in isolation, with no network:
   - `test_fetch.py` — happy path with a mocked `urllib.request.urlopen`; `FetchError` paths for non-2xx, timeout, and connection error.
   - `test_normalize.py` — comma-segment extraction, NFD diacritic stripping, 15-minute rounding incl. boundary cases (e.g. 22:53 → 23:00).
+  - `test_source.py` — `tag_source` writes the expected `X-JAZZHKI-SOURCE` value; calling it twice on the same event leaves the value at the latest call (idempotent shape).
   - `test_patch.py` — SuomiJazz `DTSTART == DTEND` ⇒ `DTEND = DTSTART + 2h` with `X-JAZZHKI-DURATION-ESTIMATED=true`; gcal events untouched.
   - `test_dedup.py` — confirmed real-world Manala collision (fixture); preference of gcal over suomijazz; passthrough for missing DTSTART/LOCATION.
   - `test_window.py` — past-30-days cutoff; future events kept; recurring events with `UNTIL` in the past dropped; recurring events with no `UNTIL` kept regardless of master DTSTART age.
