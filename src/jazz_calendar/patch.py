@@ -10,11 +10,11 @@ ESTIMATED_DURATION = timedelta(hours=2)
 def patch_event(event: Event) -> Event:
     """If ``event`` is a SuomiJazz event with DTSTART == DTEND, push DTEND out by 2h.
 
-    The replacement DTEND carries an ``X-JAZZHKI-DURATION-ESTIMATED=true`` parameter
+    The replacement DTEND carries an ``X-JAZZFI-DURATION-ESTIMATED=true`` parameter
     so downstream consumers can tell the duration is a placeholder, not authoritative.
     Events from other sources, or with a real duration, are returned unchanged.
     """
-    if str(event.get("X-JAZZHKI-SOURCE", "")) != "suomijazz":
+    if str(event.get("X-JAZZFI-SOURCE", "")) != "suomijazz":
         return event
     dtstart = event.get("DTSTART")
     dtend = event.get("DTEND")
@@ -27,6 +27,6 @@ def patch_event(event: Event) -> Event:
     event.add(
         "DTEND",
         new_end_dt,
-        parameters={"X-JAZZHKI-DURATION-ESTIMATED": "true"},
+        parameters={"X-JAZZFI-DURATION-ESTIMATED": "true"},
     )
     return event

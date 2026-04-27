@@ -1,16 +1,16 @@
 ---
-title: Jazz Calendar Helsinki — Unified iCalendar Merger
+title: Jazz Calendar Finland — Unified iCalendar Merger
 date: 2026-04-27
 status: draft
 owner: akaihola (with Claude Code)
-repo: github.com/akaihola/jazz-calendar-helsinki-unified
+repo: github.com/akaihola/jazz-calendar-finland
 ---
 
-# Jazz Calendar Helsinki — Unified iCalendar Merger
+# Jazz Calendar Finland — Unified iCalendar Merger
 
 ## 1. Purpose
 
-Publish a single public iCalendar (RFC 5545) feed that is the de-duplicated union of two upstream feeds of jazz concerts in the Helsinki metropolitan area:
+Publish a single public iCalendar (RFC 5545) feed that is the de-duplicated union of two upstream feeds of jazz concerts in the Finland:
 
 - **GigPress / SuomiJazz**: `https://suomijazz.com/?feed=gigpress-ical`
 - **Public Google Calendar (Jazz-kalenteri)**: `https://calendar.google.com/calendar/ical/ub9hkd0tjl3vk82t9jn5qudemc%40group.calendar.google.com/public/basic.ics`
@@ -38,7 +38,7 @@ The merged feed is consumed by ordinary calendar clients (Google Calendar subscr
 
 ## 3. Architecture
 
-A single public GitHub repository, `akaihola/jazz-calendar-helsinki-unified`, contains:
+A single public GitHub repository, `akaihola/jazz-calendar-finland`, contains:
 
 - A Python script that fetches both upstream feeds, merges them, and writes `docs/calendar.ics`.
 - A GitHub Actions workflow that runs the script on a 6-hour schedule and on pushes to `main`, then commits any change to `docs/calendar.ics`.
@@ -46,7 +46,7 @@ A single public GitHub repository, `akaihola/jazz-calendar-helsinki-unified`, co
 
 ### 3.1 Public URL
 
-`https://akaihola.github.io/jazz-calendar-helsinki-unified/calendar.ics`
+`https://akaihola.github.io/jazz-calendar-finland/calendar.ics`
 
 This is the only contract with consumers.
 
@@ -69,7 +69,7 @@ This is the only contract with consumers.
                                             │
                                             │ served by GitHub Pages
                                             ▼
-                  https://akaihola.github.io/jazz-calendar-helsinki-unified/calendar.ics
+                  https://akaihola.github.io/jazz-calendar-finland/calendar.ics
 ```
 
 ### 3.3 Repository layout
@@ -138,7 +138,7 @@ Each component is a small Python module with a single responsibility, importable
 
 - Public function: `fetch_feed(url: str, *, timeout: float = 30.0) -> bytes`
 - Uses `urllib.request` (stdlib) to keep the dependency surface minimal.
-- Sends a `User-Agent: jazz-calendar-helsinki-unified/1.0 (+https://github.com/akaihola/jazz-calendar-helsinki-unified)`.
+- Sends a `User-Agent: jazz-calendar-finland/1.0 (+https://github.com/akaihola/jazz-calendar-finland)`.
 - Raises a typed `FetchError` on non-2xx, network failure, or timeout. The caller (the workflow) decides whether to abort.
 - No retry logic in v1: the workflow already retries every 6 hours.
 
@@ -151,13 +151,13 @@ Each component is a small Python module with a single responsibility, importable
 ### 4.3 `source.py` — Source tagging
 
 - Public function: `tag_source(events: Iterable[VEvent], source: Literal["gcal", "suomijazz"]) -> Iterator[VEvent]`
-- Adds an `X-JAZZHKI-SOURCE` property to each event with value `"gcal"` or `"suomijazz"`.
+- Adds an `X-JAZZFI-SOURCE` property to each event with value `"gcal"` or `"suomijazz"`.
 - Called immediately after parsing each upstream feed, before any other transformation. This is the only mechanism by which downstream stages know an event's origin.
 
 ### 4.4 `patch.py` — Source-specific patches
 
 - Public function: `patch_event(event: VEvent) -> VEvent` (mutates and returns the same instance).
-- Currently performs one transform: when `event["X-JAZZHKI-SOURCE"] == "suomijazz"` and `DTSTART == DTEND`, sets `DTEND = DTSTART + 2 hours` and adds the parameter `X-JAZZHKI-DURATION-ESTIMATED=true` to the DTEND property.
+- Currently performs one transform: when `event["X-JAZZFI-SOURCE"] == "suomijazz"` and `DTSTART == DTEND`, sets `DTEND = DTSTART + 2 hours` and adds the parameter `X-JAZZFI-DURATION-ESTIMATED=true` to the DTEND property.
 - Designed as a chain so future per-source patches can be added without touching `merge.py`.
 - Tested as a unit: `tests/test_patch.py`.
 
@@ -166,7 +166,7 @@ Each component is a small Python module with a single responsibility, importable
 - Public function: `dedup(events: Iterable[VEvent], *, prefer: Callable[[VEvent], int] = default_prefer) -> list[VEvent]`
 - Computes a key per event: `(round_dt_to_15min(DTSTART_utc), normalize_location(LOCATION))`.
 - On collision, keeps the event whose `prefer(...)` returns the highest integer; logs the discarded event's source and UID at INFO.
-- `default_prefer(event)` reads `X-JAZZHKI-SOURCE`: returns `2` for `"gcal"`, `1` for `"suomijazz"`, `0` otherwise. This is the contract between §4.3 (tagger) and §4.5 (resolver).
+- `default_prefer(event)` reads `X-JAZZFI-SOURCE`: returns `2` for `"gcal"`, `1` for `"suomijazz"`, `0` otherwise. This is the contract between §4.3 (tagger) and §4.5 (resolver).
 - Events with missing or unparsable DTSTART or LOCATION get a synthetic uniquifier in the key (so they cannot collide); they are passed through unchanged and logged at WARNING level.
 
 ### 4.6 `window.py` — Time-window filter
@@ -189,11 +189,11 @@ Each component is a small Python module with a single responsibility, importable
   - Total kept events must be > 0.
   - Total kept events must be ≥ 50% of the count published in the previous `docs/calendar.ics` (when one exists). Reads the previous file from disk before regenerating.
 - Builds the output `Calendar` with:
-  - `PRODID:-//akaihola//jazz-calendar-helsinki-unified//EN`
+  - `PRODID:-//akaihola//jazz-calendar-finland//EN`
   - `VERSION:2.0`
   - `CALSCALE:GREGORIAN`
   - `METHOD:PUBLISH`
-  - `X-WR-CALNAME:Jazz Helsinki (unified)`
+  - `X-WR-CALNAME:Jazz Finland (unified)`
   - `X-WR-TIMEZONE:Europe/Helsinki`
   - The `Europe/Helsinki` `VTIMEZONE` taken from the GCal feed (canonical).
 - Validates the serialised output by round-tripping it through `Calendar.from_ical(...)`; aborts on parse error.
@@ -244,7 +244,7 @@ When the key collides, keep the event whose source has higher priority. GCal > S
 | Missing DTSTART | Logged WARNING; passes through unchanged with synthetic uniquifier. (Calendar clients will ignore it.) |
 | All-day event (`VALUE=DATE`) | Treated as starting at 00:00 local; rounding still produces a stable 15-min key. |
 | Recurring event | Master VEVENT is keyed by its first DTSTART. Instances are not exploded. |
-| SuomiJazz `DTSTART == DTEND` | DTEND set to DTSTART + 2 hours before dedup. Documented in `X-JAZZHKI-DURATION-ESTIMATED`. |
+| SuomiJazz `DTSTART == DTEND` | DTEND set to DTSTART + 2 hours before dedup. Documented in `X-JAZZFI-DURATION-ESTIMATED`. |
 
 ## 6. Time window
 
@@ -288,8 +288,8 @@ Modules are built in the order: `fetch` → `normalize` → `source` → `patch`
 - **Unit tests** (`pytest`) cover every module listed in §4 in isolation, with no network:
   - `test_fetch.py` — happy path with a mocked `urllib.request.urlopen`; `FetchError` paths for non-2xx, timeout, and connection error.
   - `test_normalize.py` — comma-segment extraction, NFD diacritic stripping, 15-minute rounding incl. boundary cases (e.g. 22:53 → 23:00).
-  - `test_source.py` — `tag_source` writes the expected `X-JAZZHKI-SOURCE` value; calling it twice on the same event leaves the value at the latest call (idempotent shape).
-  - `test_patch.py` — SuomiJazz `DTSTART == DTEND` ⇒ `DTEND = DTSTART + 2h` with `X-JAZZHKI-DURATION-ESTIMATED=true`; gcal events untouched.
+  - `test_source.py` — `tag_source` writes the expected `X-JAZZFI-SOURCE` value; calling it twice on the same event leaves the value at the latest call (idempotent shape).
+  - `test_patch.py` — SuomiJazz `DTSTART == DTEND` ⇒ `DTEND = DTSTART + 2h` with `X-JAZZFI-DURATION-ESTIMATED=true`; gcal events untouched.
   - `test_dedup.py` — confirmed real-world Manala collision (fixture); preference of gcal over suomijazz; passthrough for missing DTSTART/LOCATION.
   - `test_window.py` — past-30-days cutoff; future events kept; recurring events with `UNTIL` in the past dropped; recurring events with no `UNTIL` kept regardless of master DTSTART age.
   - `test_merge.py` — zero-event guard, < 50 % drop guard, round-trip parse guard, end-to-end snapshot.
@@ -304,9 +304,9 @@ Modules are built in the order: `fetch` → `normalize` → `source` → `patch`
 
 The "no human operators" framing in §1 applies to *steady-state* operation. The first deploy is performed once by Claude Code from the host that has GitHub push authority for the owner's account. The bootstrap steps are:
 
-1. Create the public repo via `gh repo create akaihola/jazz-calendar-helsinki-unified --public --source=. --push`.
-2. Add GitHub topics: `gh repo edit --add-topic vibe-coded --add-topic claude-code --add-topic icalendar --add-topic helsinki --add-topic jazz`.
-3. Enable GitHub Pages: `gh api repos/akaihola/jazz-calendar-helsinki-unified/pages -X POST -f source.branch=main -f source.path=/docs`.
+1. Create the public repo via `gh repo create akaihola/jazz-calendar-finland --public --source=. --push`.
+2. Add GitHub topics: `gh repo edit --add-topic vibe-coded --add-topic claude-code --add-topic icalendar --add-topic finland --add-topic jazz`.
+3. Enable GitHub Pages: `gh api repos/akaihola/jazz-calendar-finland/pages -X POST -f source.branch=main -f source.path=/docs`.
 4. Trigger the first run: `gh workflow run refresh.yml`.
 5. Confirm the published feed at the public URL.
 
@@ -329,11 +329,11 @@ After this, no human or host-specific action is required.
 - **Feed validation badge** in `README.md` showing the timestamp of the last successful merge.
 - **Last-merge timestamp on `docs/index.html`** extracted from the most recent commit message (free observability without a separate badge).
 - **Quarterly fixture refresh job** that opens a PR re-capturing `tests/fixtures/` from upstream, so format-drift tests stay realistic.
-- **Custom domain** if `akaihola.github.io/jazz-calendar-helsinki-unified` is unsatisfactory.
-- **Geographic filtering** if the user later decides to restrict to Helsinki metro.
+- **Custom domain** if `akaihola.github.io/jazz-calendar-finland` is unsatisfactory.
+- **Geographic filtering** if the user later decides to restrict to a sub-region (e.g. Helsinki metro).
 - **Description merging** when a collision is found, instead of dropping one source.
 - **Content-stable DTSTAMP** to eliminate commit churn, if the per-run commit pattern in §7 becomes a problem.
 
 ## 12. Open items
 
-None blocking. All clarifying questions were resolved during brainstorming (no geo filter; +30 days history; Proposal 1; repo name `akaihola/jazz-calendar-helsinki-unified`; 6-hour cadence).
+None blocking. All clarifying questions were resolved during brainstorming (no geo filter; +30 days history; Proposal 1; repo name `akaihola/jazz-calendar-finland`; 6-hour cadence).

@@ -27,7 +27,7 @@ JAZZ_CALENDAR_OUTPUT = Path(
     os.environ.get("JAZZ_CALENDAR_OUTPUT", "docs/calendar.ics")
 )
 
-PRODID = "-//akaihola//jazz-calendar-helsinki-unified//EN"
+PRODID = "-//akaihola//jazz-calendar-finland//EN"
 
 
 def _now_utc() -> datetime:
@@ -93,7 +93,7 @@ def main() -> None:
     out.add("VERSION", "2.0")
     out.add("CALSCALE", "GREGORIAN")
     out.add("METHOD", "PUBLISH")
-    out.add("X-WR-CALNAME", "Jazz Helsinki (unified)")
+    out.add("X-WR-CALNAME", "Jazz Finland (unified)")
     out.add("X-WR-TIMEZONE", "Europe/Helsinki")
     vtimezone = _extract_vtimezone(gcal_cal)
     if vtimezone is not None:

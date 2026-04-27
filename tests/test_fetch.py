@@ -12,8 +12,8 @@ import pytest
 from jazz_calendar.fetch import FetchError, fetch_feed
 
 EXPECTED_USER_AGENT = (
-    "jazz-calendar-helsinki-unified/1.0 "
-    "(+https://github.com/akaihola/jazz-calendar-helsinki-unified)"
+    "jazz-calendar-finland/1.0 "
+    "(+https://github.com/akaihola/jazz-calendar-finland)"
 )
 
 

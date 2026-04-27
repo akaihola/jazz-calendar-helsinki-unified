@@ -16,7 +16,7 @@ def _make(source: str, start: datetime, end: datetime) -> Event:
     # plain ``__setitem__`` would store the raw ``datetime``.
     e.add("DTSTART", start)
     e.add("DTEND", end)
-    e["X-JAZZHKI-SOURCE"] = source
+    e["X-JAZZFI-SOURCE"] = source
     return e
 
 
@@ -25,7 +25,7 @@ def test_patch_suomijazz_dtstart_equals_dtend() -> None:
     e = _make("suomijazz", start, start)
     patch_event(e)
     assert e["DTEND"].dt == start + timedelta(hours=2)
-    flag = e["DTEND"].params["X-JAZZHKI-DURATION-ESTIMATED"]
+    flag = e["DTEND"].params["X-JAZZFI-DURATION-ESTIMATED"]
     assert str(flag).lower() == "true"
 
 
@@ -35,7 +35,7 @@ def test_patch_suomijazz_real_duration_left_alone() -> None:
     e = _make("suomijazz", start, end)
     patch_event(e)
     assert e["DTEND"].dt == end
-    assert "X-JAZZHKI-DURATION-ESTIMATED" not in e["DTEND"].params
+    assert "X-JAZZFI-DURATION-ESTIMATED" not in e["DTEND"].params
 
 
 def test_patch_gcal_event_unchanged() -> None:
@@ -43,4 +43,4 @@ def test_patch_gcal_event_unchanged() -> None:
     e = _make("gcal", start, start)
     patch_event(e)
     assert e["DTEND"].dt == start
-    assert "X-JAZZHKI-DURATION-ESTIMATED" not in e["DTEND"].params
+    assert "X-JAZZFI-DURATION-ESTIMATED" not in e["DTEND"].params

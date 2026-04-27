@@ -33,7 +33,7 @@ def test_dedup_real_world_collision() -> None:
     gc = list(tag_source(_events_from(FIXTURES / "manala_collision_gcal.ics"), "gcal"))
     result = dedup(sj + gc)
     assert len(result) == 1
-    assert str(result[0]["X-JAZZHKI-SOURCE"]) == "gcal"
+    assert str(result[0]["X-JAZZFI-SOURCE"]) == "gcal"
 
 
 def test_dedup_keeps_distinct_events() -> None:
@@ -98,7 +98,7 @@ def test_dedup_collapses_venue_with_floor_suffix() -> None:
     )
     result = dedup(events)
     assert len(result) == 1
-    assert str(result[0]["X-JAZZHKI-SOURCE"]) == "gcal"
+    assert str(result[0]["X-JAZZFI-SOURCE"]) == "gcal"
 
 
 def test_dedup_collapses_ampersand_vs_and() -> None:
@@ -112,7 +112,7 @@ def test_dedup_collapses_ampersand_vs_and() -> None:
     )
     result = dedup(events)
     assert len(result) == 1
-    assert str(result[0]["X-JAZZHKI-SOURCE"]) == "gcal"
+    assert str(result[0]["X-JAZZFI-SOURCE"]) == "gcal"
 
 
 def test_dedup_collapses_street_typo_via_address_and_token() -> None:
@@ -126,7 +126,7 @@ def test_dedup_collapses_street_typo_via_address_and_token() -> None:
     )
     result = dedup(events)
     assert len(result) == 1
-    assert str(result[0]["X-JAZZHKI-SOURCE"]) == "gcal"
+    assert str(result[0]["X-JAZZFI-SOURCE"]) == "gcal"
 
 
 def test_dedup_address_key_alone_does_not_collapse_unrelated_events() -> None:

@@ -1,4 +1,4 @@
-# Jazz Calendar Helsinki — Implementation Plan
+# Jazz Calendar Finland — Implementation Plan
 
 > **For agentic workers:** REQUIRED: Use `superpowers:subagent-driven-development` (if subagents available) or `superpowers:executing-plans` to implement this plan. Steps use checkbox (`- [x]`) syntax for tracking.
 
@@ -14,12 +14,12 @@
 
 If you (a future Claude Code session) are picking this plan up cold, do this in order, then continue from the first unchecked task:
 
-1. `cd /home/akaihola/prg/jazz-calendar-helsinki-unified` (or the equivalent worktree).
+1. `cd /home/akaihola/prg/jazz-calendar-finland` (or the equivalent worktree).
 2. Read the spec: `docs/superpowers/specs/2026-04-27-jazz-calendar-merger-design.md` — single source of truth for behavior. The plan refers to spec sections as `[spec §N]`.
 3. Read this plan and run `git log --oneline -- docs/superpowers/plans/2026-04-27-jazz-calendar-merger.md src/ tests/ .github/` to see what has already been committed.
 4. Look at this file (`docs/superpowers/plans/2026-04-27-jazz-calendar-merger.md`) — completed tasks have `[x]` checkboxes; resume at the first `[ ]`.
 5. Captured upstream samples used by tests live under `tests/fixtures/` once Chunk 1 is done. They are byte snapshots, not regenerated automatically.
-6. Bootstrap (Chunk 10) is the only chunk that mutates anything outside the repo. Skip Chunk 10 entirely if both `gh repo view akaihola/jazz-calendar-helsinki-unified` returns success **and** `gh api repos/akaihola/jazz-calendar-helsinki-unified/pages` returns an `html_url`. Otherwise run only the tasks whose preconditions are not yet met: 10.1 and 10.3 carry explicit precondition guards in the task body; 10.2 and 10.4 are natively idempotent; 10.5 is a stateless smoke check.
+6. Bootstrap (Chunk 10) is the only chunk that mutates anything outside the repo. Skip Chunk 10 entirely if both `gh repo view akaihola/jazz-calendar-finland` returns success **and** `gh api repos/akaihola/jazz-calendar-finland/pages` returns an `html_url`. Otherwise run only the tasks whose preconditions are not yet met: 10.1 and 10.3 carry explicit precondition guards in the task body; 10.2 and 10.4 are natively idempotent; 10.5 is a stateless smoke check.
 7. Network is required for Task 1.3 (capturing fixtures) and the manual smoke step in Task 8.2. Other tasks run offline. If network is unavailable when those tasks run, abort and surface the blockage to the user.
 
 **Discipline:** strict red/green TDD per [spec §8]. For every task: write the test first, run pytest and observe red, write the smallest implementation that makes it green, commit. Do not batch tests-and-implementation into one commit unless this plan says so.
@@ -38,7 +38,7 @@ If you (a future Claude Code session) are picking this plan up cold, do this in 
 - Create: `pyproject.toml`
 - Create: `src/jazz_calendar/__init__.py` (empty)
 
-- [x] Write `pyproject.toml` with: project name `jazz-calendar-helsinki-unified`, version `0.1.0`, `requires-python = ">=3.13"`, runtime dep `icalendar>=7,<8`, dev dep `pytest>=9,<10`, build-system using `uv_build>=0.11.0,<0.12.0`. Match the conventions in [spec §3.3].
+- [x] Write `pyproject.toml` with: project name `jazz-calendar-finland`, version `0.1.0`, `requires-python = ">=3.13"`, runtime dep `icalendar>=7,<8`, dev dep `pytest>=9,<10`, build-system using `uv_build>=0.11.0,<0.12.0`. Match the conventions in [spec §3.3].
 - [x] Create empty `src/jazz_calendar/__init__.py`.
 - [x] Run `uv sync` — expect a fresh `uv.lock`.
 - [x] Run `uv run python -c "import jazz_calendar"` — expect no output, exit 0.
@@ -51,10 +51,10 @@ If you (a future Claude Code session) are picking this plan up cold, do this in 
 
 Per [spec §3.4]. Include:
 
-- [x] Title `# jazz-calendar-helsinki-unified`.
+- [x] Title `# jazz-calendar-finland`.
 - [x] Built-with-Claude-Code badge (use the exact shields.io URL from §3.4).
 - [x] The blockquote notice from §3.4.
-- [x] One paragraph describing the project and the public feed URL `https://akaihola.github.io/jazz-calendar-helsinki-unified/calendar.ics`.
+- [x] One paragraph describing the project and the public feed URL `https://akaihola.github.io/jazz-calendar-finland/calendar.ics`.
 - [x] List of upstream feeds.
 - [x] A "Development" subsection: `uv sync`, `uv run pytest`, `uv run python -m jazz_calendar.merge`.
 - [x] Commit: `docs: add README with vibe-coded labeling`.
@@ -159,10 +159,10 @@ Cover three behaviors:
 **Files:**
 - Create: `tests/test_source.py`
 
-- [x] `test_tag_source_writes_property` — given two `icalendar.Event` instances, `tag_source([e1, e2], "gcal")` yields events whose `e["X-JAZZHKI-SOURCE"]` equals `"gcal"`.
+- [x] `test_tag_source_writes_property` — given two `icalendar.Event` instances, `tag_source([e1, e2], "gcal")` yields events whose `e["X-JAZZFI-SOURCE"]` equals `"gcal"`.
 - [x] `test_tag_source_idempotent_overwrite` — calling `tag_source(..., "suomijazz")` then `tag_source(..., "gcal")` on the same event leaves the property at `"gcal"`.
 - [x] Run pytest — red.
-- [x] Commit: `test(source): add failing tests for X-JAZZHKI-SOURCE tagging`.
+- [x] Commit: `test(source): add failing tests for X-JAZZFI-SOURCE tagging`.
 
 ### Task 4.2: Implement source tagging
 
@@ -171,7 +171,7 @@ Cover three behaviors:
 
 - [x] Implement `tag_source(events, source) -> Iterator[Event]` per [spec §4.3]. Use `Event.__setitem__` (icalendar 7 API).
 - [x] Run pytest — green.
-- [x] Commit: `feat(source): tag events with X-JAZZHKI-SOURCE`.
+- [x] Commit: `feat(source): tag events with X-JAZZFI-SOURCE`.
 
 ---
 
@@ -184,9 +184,9 @@ Cover three behaviors:
 **Files:**
 - Create: `tests/test_patch.py`
 
-- [x] `test_patch_suomijazz_dtstart_equals_dtend` — Event with `X-JAZZHKI-SOURCE=suomijazz` and `DTSTART==DTEND` is patched: `DTEND = DTSTART + 2h`, parameter `X-JAZZHKI-DURATION-ESTIMATED=true` on DTEND.
+- [x] `test_patch_suomijazz_dtstart_equals_dtend` — Event with `X-JAZZFI-SOURCE=suomijazz` and `DTSTART==DTEND` is patched: `DTEND = DTSTART + 2h`, parameter `X-JAZZFI-DURATION-ESTIMATED=true` on DTEND.
 - [x] `test_patch_suomijazz_real_duration_left_alone` — Event with `DTSTART < DTEND` is unchanged.
-- [x] `test_patch_gcal_event_unchanged` — Event with `X-JAZZHKI-SOURCE=gcal` is never modified, even if `DTSTART==DTEND`.
+- [x] `test_patch_gcal_event_unchanged` — Event with `X-JAZZFI-SOURCE=gcal` is never modified, even if `DTSTART==DTEND`.
 - [x] Run pytest — red.
 - [x] Commit: `test(patch): add failing tests for SuomiJazz duration patch`.
 
@@ -210,7 +210,7 @@ Cover three behaviors:
 **Files:**
 - Create: `tests/test_dedup.py`
 
-- [x] `test_dedup_real_world_collision` — load `tests/fixtures/manala_collision_*.ics`, run `tag_source` on each, concatenate, run `dedup`. Expect exactly one event in the result, and that event's `X-JAZZHKI-SOURCE` is `"gcal"`.
+- [x] `test_dedup_real_world_collision` — load `tests/fixtures/manala_collision_*.ics`, run `tag_source` on each, concatenate, run `dedup`. Expect exactly one event in the result, and that event's `X-JAZZFI-SOURCE` is `"gcal"`.
 - [x] `test_dedup_keeps_distinct_events` — two events at the same venue but 60 min apart are both kept.
 - [x] `test_dedup_keeps_same_time_distinct_venues` — two events at the same start time but different venues are both kept.
 - [x] `test_dedup_passes_through_event_missing_dtstart` — an event without DTSTART is kept (with synthetic uniquifier so it never collides).
@@ -349,15 +349,15 @@ This chunk mutates external state (creates the public repo, enables Pages). Each
 
 ### Task 10.1: Create the GitHub repo
 
-- [x] Precondition check: `gh repo view akaihola/jazz-calendar-helsinki-unified >/dev/null 2>&1` — if it succeeds, skip the create.
-- [x] Otherwise: `gh repo create akaihola/jazz-calendar-helsinki-unified --public --source=. --push --description "Public iCalendar feed merging two Helsinki jazz calendars (vibe-coded)."`
-- [x] Verify: `gh repo view akaihola/jazz-calendar-helsinki-unified` exits 0.
+- [x] Precondition check: `gh repo view akaihola/jazz-calendar-finland >/dev/null 2>&1` — if it succeeds, skip the create.
+- [x] Otherwise: `gh repo create akaihola/jazz-calendar-finland --public --source=. --push --description "Public iCalendar feed merging two Finland jazz calendars (vibe-coded)."`
+- [x] Verify: `gh repo view akaihola/jazz-calendar-finland` exits 0.
 
 ### Task 10.2: Add topics
 
 `gh repo edit --add-topic` is idempotent (re-adding an existing topic is a no-op), so no precondition guard is needed.
 
-- [x] `gh repo edit akaihola/jazz-calendar-helsinki-unified --add-topic vibe-coded --add-topic claude-code --add-topic icalendar --add-topic helsinki --add-topic jazz`.
+- [x] `gh repo edit akaihola/jazz-calendar-finland --add-topic vibe-coded --add-topic claude-code --add-topic icalendar --add-topic finland --add-topic jazz`.
 
 ### Task 10.3: Enable GitHub Pages
 
@@ -365,27 +365,27 @@ This chunk mutates external state (creates the public repo, enables Pages). Each
 
 - [x] If already enabled, skip:
 
-      if gh api repos/akaihola/jazz-calendar-helsinki-unified/pages 2>/dev/null | jq -e .html_url >/dev/null; then
+      if gh api repos/akaihola/jazz-calendar-finland/pages 2>/dev/null | jq -e .html_url >/dev/null; then
         echo "Pages already enabled; skipping."
       else
-        gh api repos/akaihola/jazz-calendar-helsinki-unified/pages -X POST -f source.branch=main -f source.path=/docs
+        gh api repos/akaihola/jazz-calendar-finland/pages -X POST -f source.branch=main -f source.path=/docs
       fi
 
-- [x] Wait ~30 s, then `gh api repos/akaihola/jazz-calendar-helsinki-unified/pages | jq .html_url` — should print the Pages URL.
+- [x] Wait ~30 s, then `gh api repos/akaihola/jazz-calendar-finland/pages | jq .html_url` — should print the Pages URL.
 
 ### Task 10.4: First scheduled run
 
 This task is intentionally re-runnable — `workflow_dispatch` can be triggered any number of times.
 
-- [x] `gh workflow run refresh.yml --repo akaihola/jazz-calendar-helsinki-unified`
-- [x] Poll `gh run list --repo akaihola/jazz-calendar-helsinki-unified --workflow refresh.yml --limit 1` until status is `success` (or `failure` — investigate via `gh run view <id> --log`).
-- [x] Confirm Pages build is built: `gh api repos/akaihola/jazz-calendar-helsinki-unified/pages/builds/latest | jq .status` — expect `"built"`.
-- [x] `curl -sI https://akaihola.github.io/jazz-calendar-helsinki-unified/calendar.ics` — assert `HTTP/2 200` and `content-type` header is either `text/calendar` or `application/octet-stream` (both are acceptable for `.ics` on Pages).
+- [x] `gh workflow run refresh.yml --repo akaihola/jazz-calendar-finland`
+- [x] Poll `gh run list --repo akaihola/jazz-calendar-finland --workflow refresh.yml --limit 1` until status is `success` (or `failure` — investigate via `gh run view <id> --log`).
+- [x] Confirm Pages build is built: `gh api repos/akaihola/jazz-calendar-finland/pages/builds/latest | jq .status` — expect `"built"`.
+- [x] `curl -sI https://akaihola.github.io/jazz-calendar-finland/calendar.ics` — assert `HTTP/2 200` and `content-type` header is either `text/calendar` or `application/octet-stream` (both are acceptable for `.ics` on Pages).
 - [x] Commit nothing (this task only triggers external state).
 
 ### Task 10.5: Smoke-subscribe check
 
-- [x] `curl -s https://akaihola.github.io/jazz-calendar-helsinki-unified/ | grep -F "AI coding agent"` — expect a hit on the vibe-coded notice (browser optional).
+- [x] `curl -s https://akaihola.github.io/jazz-calendar-finland/ | grep -F "AI coding agent"` — expect a hit on the vibe-coded notice (browser optional).
 - [x] Done.
 
 ---

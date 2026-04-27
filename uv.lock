@@ -34,7 +34,7 @@ wheels = [
 ]
 
 [[package]]
-name = "jazz-calendar-helsinki-unified"
+name = "jazz-calendar-finland"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

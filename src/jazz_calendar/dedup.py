@@ -30,7 +30,7 @@ from .normalize import (
 
 def default_prefer(event: Event) -> int:
     """Score events by source: gcal (2) > suomijazz (1) > unknown (0)."""
-    src = str(event.get("X-JAZZHKI-SOURCE", ""))
+    src = str(event.get("X-JAZZFI-SOURCE", ""))
     return {"gcal": 2, "suomijazz": 1}.get(src, 0)
 
 

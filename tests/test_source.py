@@ -16,7 +16,7 @@ def test_tag_source_writes_property() -> None:
     out = list(tag_source([e1, e2], "gcal"))
     assert len(out) == 2
     for e in out:
-        assert str(e["X-JAZZHKI-SOURCE"]) == "gcal"
+        assert str(e["X-JAZZFI-SOURCE"]) == "gcal"
 
 
 def test_tag_source_idempotent_overwrite() -> None:
@@ -24,4 +24,4 @@ def test_tag_source_idempotent_overwrite() -> None:
     list(tag_source([e], "suomijazz"))
     list(tag_source([e], "gcal"))
     # Final value is "gcal", not duplicated.
-    assert str(e["X-JAZZHKI-SOURCE"]) == "gcal"
+    assert str(e["X-JAZZFI-SOURCE"]) == "gcal"
