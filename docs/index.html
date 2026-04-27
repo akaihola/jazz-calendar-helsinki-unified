@@ -36,8 +36,9 @@
     }
     .fc-list-event-location {
       padding: 8px 14px;
-      white-space: nowrap;
       color: #555;
+      max-width: 100vw;
+      overflow-wrap: anywhere;
     }
     /* The location column's nowrap text pushes the list table past the viewport
        width on narrow screens; allow the scroller to scroll horizontally so the
@@ -57,6 +58,21 @@
     .fc .fc-list-day-side-text {
       position: sticky;
       right: 14px;
+    }
+    @media (max-width: 800px) {
+      /* Cap title width so cols 1–3 fit within the viewport; force the
+         location column to be viewport-wide so the whole row is just under
+         two viewports, with a sliver of col 4 visible at the right edge and
+         the rest reachable via horizontal scroll. */
+      .fc-list-event-title {
+        min-width: calc(100vw - 14em);
+        max-width: calc(100vw - 14em);
+        overflow-wrap: anywhere;
+      }
+      .fc-list-event-location {
+        min-width: calc(100vw - 2em);
+        max-width: calc(100vw - 2em);
+      }
     }
     @media (max-width: 700px) {
       .fc .fc-toolbar.fc-header-toolbar { margin-bottom: 0.75em; }
