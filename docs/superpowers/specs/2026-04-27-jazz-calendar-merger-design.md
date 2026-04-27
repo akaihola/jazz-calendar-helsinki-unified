@@ -107,9 +107,28 @@ This is the only contract with consumers.
 └── docs/superpowers/specs/...        # this document and successors
 ```
 
-`pyproject.toml` declares the package via `[tool.hatch.build.targets.wheel] packages = ["src/jazz_calendar"]` (or equivalent) so `python -m jazz_calendar.merge` works after `uv sync`.
+`pyproject.toml` uses the `uv_build` backend:
+
+```
+[build-system]
+requires = ["uv_build>=0.11.0,<0.12.0"]
+build-backend = "uv_build"
+```
+
+so `python -m jazz_calendar.merge` works after `uv sync`. Required Python: `>=3.13`. Pinned runtime deps: `icalendar>=7,<8`. Pinned dev deps: `pytest>=9,<10`.
 
 `docs/index.html` is a 10-line static page so visitors who hit the project root get a hint about the feed URL; nothing else.
+
+### 3.4 Vibe-coded labeling
+
+The repository is labeled as AI-developed, in line with the maintainer's policy for similar projects (cf. `github.com/akaihola/pykoclaw`):
+
+- **GitHub topics** on the repo: `vibe-coded`, `claude-code` (set during bootstrap, §9.1).
+- **README badge** at the top:
+  `[![Built with Claude Code](https://img.shields.io/badge/Built_with-Claude_Code-6f42c1?logo=anthropic&logoColor=white)](https://claude.ai/code)`
+- **README notice** immediately under the title:
+  `> This project is developed by an AI coding agent ([Claude Code](https://claude.ai/code)), with human oversight and direction.`
+- **`docs/index.html`** carries the same notice in plain HTML so visitors to the published Pages site see it without clicking through to the repo.
 
 ## 4. Components
 
@@ -188,8 +207,8 @@ Each component is a small Python module with a single responsibility, importable
   - `workflow_dispatch` (manual trigger from CLI / UI).
   - `push` to `main` for paths `src/**`, `pyproject.toml`, `uv.lock`, or `.github/workflows/refresh.yml` (so code, dependency, and workflow changes regenerate immediately).
 - Steps:
-  1. `actions/checkout@v4` with `persist-credentials: true`.
-  2. Install `uv` via `astral-sh/setup-uv@v3`.
+  1. `actions/checkout@v6` with `persist-credentials: true`.
+  2. Install `uv` via `astral-sh/setup-uv@v8` (pinned `version: 0.11.x`).
   3. Run `uv sync --frozen`.
   4. Run `uv run python -m jazz_calendar.merge`.
   5. If `git status --porcelain docs/calendar.ics` is non-empty, configure committer identity, `git add docs/calendar.ics`, `git commit -m "chore(feed): refresh $(date -u +%FT%TZ)"`, and `git push`. **No deduplication of "trivial" changes.** Each scheduled run that produces any byte-difference (including DTSTAMP drift from upstream) creates a commit. This is intentional simplicity; see §7 row "Trivial-only diff" for the rationale.
@@ -258,6 +277,14 @@ These three commands cover ~all expected diagnostics.
 
 ## 8. Testing strategy
 
+**Implementation discipline:** every module is built using strict red/green TDD. For each unit:
+
+1. **Red.** Write the failing test(s) first. Run `uv run pytest -q tests/test_<module>.py` and confirm a *red* result (test fails for the expected reason — assertion failure, not import error).
+2. **Green.** Write the smallest implementation that makes the tests pass. Run the same command and confirm green.
+3. **Refactor** if needed, keeping the suite green.
+
+Modules are built in the order: `fetch` → `normalize` → `source` → `patch` → `dedup` → `window` → `merge`. Each stage's tests use only the previously-built modules plus stdlib.
+
 - **Unit tests** (`pytest`) cover every module listed in §4 in isolation, with no network:
   - `test_fetch.py` — happy path with a mocked `urllib.request.urlopen`; `FetchError` paths for non-2xx, timeout, and connection error.
   - `test_normalize.py` — comma-segment extraction, NFD diacritic stripping, 15-minute rounding incl. boundary cases (e.g. 22:53 → 23:00).
@@ -273,16 +300,17 @@ These three commands cover ~all expected diagnostics.
 
 ## 9. Operations
 
-### 9.1 Bootstrap (one-time, performed by Claude Code on `atom`)
+### 9.1 Bootstrap (one-time)
 
-The "no human operators" framing in §1 applies to *steady-state* operation. The very first deploy still requires Claude Code to be running on `atom`, because that is the only host with push authority for the user's GitHub account. The bootstrap steps are:
+The "no human operators" framing in §1 applies to *steady-state* operation. The first deploy is performed once by Claude Code from the host that has GitHub push authority for the owner's account. The bootstrap steps are:
 
 1. Create the public repo via `gh repo create akaihola/jazz-calendar-helsinki-unified --public --source=. --push`.
-2. Enable GitHub Pages: `gh api repos/akaihola/jazz-calendar-helsinki-unified/pages -X POST -f source.branch=main -f source.path=/docs`.
-3. Trigger the first run: `gh workflow run refresh.yml`.
-4. Confirm the published feed at the public URL.
+2. Add GitHub topics: `gh repo edit --add-topic vibe-coded --add-topic claude-code --add-topic icalendar --add-topic helsinki --add-topic jazz`.
+3. Enable GitHub Pages: `gh api repos/akaihola/jazz-calendar-helsinki-unified/pages -X POST -f source.branch=main -f source.path=/docs`.
+4. Trigger the first run: `gh workflow run refresh.yml`.
+5. Confirm the published feed at the public URL.
 
-After this, no human or specific-host action is required.
+After this, no human or host-specific action is required.
 
 ### 9.2 Steady state
 
