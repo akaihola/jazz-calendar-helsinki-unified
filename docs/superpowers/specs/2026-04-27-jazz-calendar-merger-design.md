@@ -76,26 +76,37 @@ This is the only contract with consumers.
 
 ```
 .
-├── .github/workflows/refresh.yml     # cron + on-push workflow
+├── .github/workflows/
+│   ├── refresh.yml                   # cron + on-push workflow (publishes feed)
+│   └── test.yml                      # runs pytest on push/PR
 ├── docs/
 │   ├── calendar.ics                  # the published feed (committed by CI)
 │   └── index.html                    # one-page README pointing at the feed
-├── src/
-│   ├── merge.py                      # merge entry point (uv run src/merge.py)
+├── src/jazz_calendar/                # importable package
+│   ├── __init__.py
+│   ├── merge.py                      # entry point (uv run python -m jazz_calendar.merge)
 │   ├── fetch.py                      # upstream HTTP fetch
+│   ├── source.py                     # tag VEvents with their source (gcal|suomijazz)
+│   ├── patch.py                      # source-specific patches (e.g. SuomiJazz DTEND fix)
 │   ├── dedup.py                      # collision detection + fold
-│   ├── window.py                     # time-window filter
+│   ├── window.py                     # time-window filter (incl. RRULE handling)
 │   └── normalize.py                  # location/title normalization helpers
 ├── tests/
 │   ├── fixtures/                     # captured upstream samples
+│   ├── test_fetch.py
+│   ├── test_normalize.py
+│   ├── test_patch.py
 │   ├── test_dedup.py
 │   ├── test_window.py
 │   └── test_merge.py
-├── pyproject.toml                    # uv-managed deps
+├── pyproject.toml                    # uv-managed deps; declares jazz_calendar package
+├── uv.lock
 ├── README.md
 ├── .gitignore
 └── docs/superpowers/specs/...        # this document and successors
 ```
+
+`pyproject.toml` declares the package via `[tool.hatch.build.targets.wheel] packages = ["src/jazz_calendar"]` (or equivalent) so `python -m jazz_calendar.merge` works after `uv sync`.
 
 `docs/index.html` is a 10-line static page so visitors who hit the project root get a hint about the feed URL; nothing else.
 
@@ -117,28 +128,47 @@ Each component is a small Python module with a single responsibility, importable
 - `round_dt_to_15min(dt: datetime) -> datetime`: convert to UTC, round to nearest 15-minute boundary.
 - `normalize_summary(s: str) -> str`: lowercase, strip diacritics, collapse whitespace; used only for tie-breaker logging, not as a primary key.
 
-### 4.3 `dedup.py` — De-duplication
+### 4.3 `source.py` — Source tagging
 
-- Public function: `dedup(events: Iterable[VEvent], *, prefer: Callable[[VEvent], int]) -> list[VEvent]`
+- Public function: `tag_source(events: Iterable[VEvent], source: Literal["gcal", "suomijazz"]) -> Iterator[VEvent]`
+- Adds an `X-JAZZHKI-SOURCE` property to each event with value `"gcal"` or `"suomijazz"`.
+- Called immediately after parsing each upstream feed, before any other transformation. This is the only mechanism by which downstream stages know an event's origin.
+
+### 4.4 `patch.py` — Source-specific patches
+
+- Public function: `patch_event(event: VEvent) -> VEvent` (mutates and returns the same instance).
+- Currently performs one transform: when `event["X-JAZZHKI-SOURCE"] == "suomijazz"` and `DTSTART == DTEND`, sets `DTEND = DTSTART + 2 hours` and adds the parameter `X-JAZZHKI-DURATION-ESTIMATED=true` to the DTEND property.
+- Designed as a chain so future per-source patches can be added without touching `merge.py`.
+- Tested as a unit: `tests/test_patch.py`.
+
+### 4.5 `dedup.py` — De-duplication
+
+- Public function: `dedup(events: Iterable[VEvent], *, prefer: Callable[[VEvent], int] = default_prefer) -> list[VEvent]`
 - Computes a key per event: `(round_dt_to_15min(DTSTART_utc), normalize_location(LOCATION))`.
-- On collision, picks the event whose `prefer(...)` returns the highest integer.
-- The default `prefer` returns `2` for Google Calendar events (richer data, real DTEND, proper VTIMEZONE) and `1` for SuomiJazz events.
-- Events with missing or unparsable DTSTART or LOCATION are passed through unchanged with a synthetic uniquifier in the key, so they cannot collide. They are logged at WARNING level.
+- On collision, keeps the event whose `prefer(...)` returns the highest integer; logs the discarded event's source and UID at INFO.
+- `default_prefer(event)` reads `X-JAZZHKI-SOURCE`: returns `2` for `"gcal"`, `1` for `"suomijazz"`, `0` otherwise. This is the contract between §4.3 (tagger) and §4.5 (resolver).
+- Events with missing or unparsable DTSTART or LOCATION get a synthetic uniquifier in the key (so they cannot collide); they are passed through unchanged and logged at WARNING level.
 
-### 4.4 `window.py` — Time-window filter
+### 4.6 `window.py` — Time-window filter
 
 - Public function: `in_window(event: VEvent, *, now: datetime, past_days: int = 30) -> bool`
-- Keeps events whose DTSTART (UTC) is `>= now - past_days` OR is in the future. There is no upper bound.
-- Recurring events: handled in v1 by including the master `VEVENT` whenever any of its instances are in the window. This is approximate but matches what calendar clients do anyway.
+- For non-recurring events, returns `True` iff `DTSTART_utc >= now - past_days` (no upper bound on the future).
+- For recurring events (VEVENT with an `RRULE` property): returns `True` iff **either** (a) `DTSTART_utc >= now - past_days`, **or** (b) `RRULE` has no `UNTIL` parameter (open-ended series), **or** (c) `RRULE.UNTIL >= now - past_days`. The master VEVENT is then emitted unchanged; instances are not exploded. Calendar clients perform their own expansion.
+- This rule keeps long-running recurring series (whose master DTSTART may be from 2014) visible while still filtering out series that ended over 30 days ago.
 
-### 4.5 `merge.py` — Orchestration
+### 4.7 `merge.py` — Orchestration
 
-- Reads `SUOMIJAZZ_URL` and `GCAL_URL` (overridable by env var for tests).
-- Calls `fetch_feed` for each.
-- Parses each with `icalendar.Calendar.from_ical(...)`.
-- Pipes events through `window.in_window` then `dedup.dedup`.
-- Special handling for SuomiJazz events where `DTSTART == DTEND`: sets `DTEND = DTSTART + 2h` and adds an `X-JAZZHKI-DURATION-ESTIMATED: true` parameter to record the change. (Tested as a separate unit.)
-- Builds a new `Calendar` with:
+- Reads `SUOMIJAZZ_URL` and `GCAL_URL` (overridable by env var for tests). Captures `now_utc = datetime.now(UTC)` once.
+- Pipeline:
+  1. `fetch_feed(SUOMIJAZZ_URL)` → `Calendar.from_ical(...)` → `tag_source(..., "suomijazz")` → `patch_event(...)` per event.
+  2. `fetch_feed(GCAL_URL)` → `Calendar.from_ical(...)` → `tag_source(..., "gcal")` → `patch_event(...)` per event (no-op for gcal today).
+  3. Concatenate both event streams.
+  4. Filter via `window.in_window(now=now_utc)`.
+  5. `dedup.dedup(events)`.
+- Sanity guards (any failure ⇒ exit non-zero, no file written):
+  - Total kept events must be > 0.
+  - Total kept events must be ≥ 50% of the count published in the previous `docs/calendar.ics` (when one exists). Reads the previous file from disk before regenerating.
+- Builds the output `Calendar` with:
   - `PRODID:-//akaihola//jazz-calendar-helsinki-unified//EN`
   - `VERSION:2.0`
   - `CALSCALE:GREGORIAN`
@@ -146,21 +176,22 @@ Each component is a small Python module with a single responsibility, importable
   - `X-WR-CALNAME:Jazz Helsinki (unified)`
   - `X-WR-TIMEZONE:Europe/Helsinki`
   - The `Europe/Helsinki` `VTIMEZONE` taken from the GCal feed (canonical).
-- Writes the result to `docs/calendar.ics` via a temp-file-then-rename to keep the served file atomic on the filesystem.
+- Validates the serialised output by round-tripping it through `Calendar.from_ical(...)`; aborts on parse error.
+- Writes the result to `docs/calendar.ics` (plain `Path.write_bytes`; atomicity at the FS layer is unnecessary because consumers read the committed git blob, not the working tree).
 - Exits non-zero on any unrecoverable error so the workflow does not commit a broken file.
 
-### 4.6 `.github/workflows/refresh.yml` — Workflow
+### 4.8 `.github/workflows/refresh.yml` — Workflow
 
 - Triggers:
-  - `schedule: cron: '17 */6 * * *'` (00:17, 06:17, 12:17, 18:17 UTC — off-the-hour to avoid the GitHub Actions cron rush).
+  - `schedule: cron: '17 */6 * * *'` (00:17, 06:17, 12:17, 18:17 UTC — off-the-hour to dodge the GitHub Actions cron rush).
   - `workflow_dispatch` (manual trigger from CLI / UI).
-  - `push` to `main` for paths `src/**` or `pyproject.toml` (so code changes regenerate immediately).
+  - `push` to `main` for paths `src/**`, `pyproject.toml`, `uv.lock`, or `.github/workflows/refresh.yml` (so code, dependency, and workflow changes regenerate immediately).
 - Steps:
   1. `actions/checkout@v4` with `persist-credentials: true`.
   2. Install `uv` via `astral-sh/setup-uv@v3`.
   3. Run `uv sync --frozen`.
-  4. Run `uv run python -m src.merge`.
-  5. If `git status --porcelain docs/calendar.ics` is non-empty, configure committer identity, `git add docs/calendar.ics`, `git commit -m "chore(feed): refresh $(date -u +%FT%TZ)"`, and `git push`.
+  4. Run `uv run python -m jazz_calendar.merge`.
+  5. If `git status --porcelain docs/calendar.ics` is non-empty, configure committer identity, `git add docs/calendar.ics`, `git commit -m "chore(feed): refresh $(date -u +%FT%TZ)"`, and `git push`. **No deduplication of "trivial" changes.** Each scheduled run that produces any byte-difference (including DTSTAMP drift from upstream) creates a commit. This is intentional simplicity; see §7 row "Trivial-only diff" for the rationale.
   6. On any failure, the job exits non-zero. The previously published `docs/calendar.ics` is unchanged.
 - Permissions: `contents: write` is granted only to this workflow.
 - Concurrency: `concurrency: { group: refresh, cancel-in-progress: false }` to prevent overlapping runs from racing each other.
@@ -206,8 +237,11 @@ When the key collides, keep the event whose source has higher priority. GCal > S
 | Failure | Result |
 |---|---|
 | Either upstream returns non-2xx, times out, or returns invalid ICS | `merge.py` exits non-zero; the workflow step fails; previous `docs/calendar.ics` continues to serve unchanged. GitHub Actions emails the repo owner on failure (default behavior). |
-| Both upstreams succeed but produce zero events | Treated as suspicious: `merge.py` exits non-zero rather than publishing an empty calendar. (Unit-tested.) |
-| Output is byte-identical to the previously committed file | No commit; workflow exits 0. Avoids commit churn. |
+| Round-trip parse of generated output fails | `merge.py` exits non-zero before writing the file. Tested in `test_merge.py`. |
+| Output contains zero events | `merge.py` exits non-zero; previous file unchanged. Tested. |
+| Output contains < 50 % of the previously published event count | `merge.py` exits non-zero; previous file unchanged. Tested. (Catches partial-parse regressions that would otherwise sneak through.) |
+| Output is byte-identical to the previously committed file | No commit; workflow exits 0. (This is rare in practice; see "Trivial-only diff" below.) |
+| Trivial-only diff (only DTSTAMP / re-formatted property order differs) | A commit is still created. v1 accepts this commit churn — at 4 runs/day × ~365 days that is ~1.5k commits/year on a single small file, well within Git's pack efficiency. The simpler diff logic is preferred over a content-hash compare. |
 | One upstream is down, the other works | v1 behaviour: the run fails, last-good is served. (See §11 future work.) |
 | `git push` is rejected (e.g., concurrent push) | Workflow fails; next scheduled run will succeed. Concurrency group prevents overlap from this workflow itself. |
 
@@ -223,22 +257,36 @@ These three commands cover ~all expected diagnostics.
 
 ## 8. Testing strategy
 
-- **Unit tests** (`pytest`) cover `normalize`, `dedup`, `window`, and the SuomiJazz duration patch in isolation. No network.
-- **Integration test** runs `merge.py` against captured upstream samples in `tests/fixtures/` and snapshots the output. Snapshot is committed and reviewed in PRs.
-- **Validation test** runs the produced ICS through `icalendar.Calendar.from_ical` (round-trip) and asserts no parser warnings.
-- **CI** runs the full test suite on every push and PR via a separate workflow `.github/workflows/test.yml`. The refresh workflow does not run tests (it only publishes).
-- **No live-network tests in CI** — fixtures are captured manually and refreshed when upstream formats change.
+- **Unit tests** (`pytest`) cover every module listed in §4 in isolation, with no network:
+  - `test_fetch.py` — happy path with a mocked `urllib.request.urlopen`; `FetchError` paths for non-2xx, timeout, and connection error.
+  - `test_normalize.py` — comma-segment extraction, NFD diacritic stripping, 15-minute rounding incl. boundary cases (e.g. 22:53 → 23:00).
+  - `test_patch.py` — SuomiJazz `DTSTART == DTEND` ⇒ `DTEND = DTSTART + 2h` with `X-JAZZHKI-DURATION-ESTIMATED=true`; gcal events untouched.
+  - `test_dedup.py` — confirmed real-world Manala collision (fixture); preference of gcal over suomijazz; passthrough for missing DTSTART/LOCATION.
+  - `test_window.py` — past-30-days cutoff; future events kept; recurring events with `UNTIL` in the past dropped; recurring events with no `UNTIL` kept regardless of master DTSTART age.
+  - `test_merge.py` — zero-event guard, < 50 % drop guard, round-trip parse guard, end-to-end snapshot.
+- **Integration test** in `test_merge.py` runs the full pipeline against captured upstream samples in `tests/fixtures/` and snapshots the output. Snapshot is committed and reviewed in PRs.
+- **Fixtures** are byte copies of the two upstream feeds captured at spec time, plus minimal hand-crafted feeds for edge cases. `tests/fixtures/README.md` records when and how each was captured.
+- **CI**: `.github/workflows/test.yml` runs `uv run pytest -q` on every push and PR. The refresh workflow does not run tests (it only publishes).
+- **No live-network tests in CI** — fixtures are refreshed manually when upstream formats change.
 
 ## 9. Operations
 
-- **Initial setup (one-time):**
-  1. Create the repo `akaihola/jazz-calendar-helsinki-unified` on GitHub (public).
-  2. Push the initial commit from `atom`.
-  3. In repo Settings → Pages, set source to `Deploy from a branch` → `main` → `/docs`.
-  4. First workflow run produces `docs/calendar.ics`; subsequent visit to the Pages URL serves it.
-- **Ongoing:** none. The workflow runs every 6 hours.
-- **Triggering an out-of-band refresh:** `gh workflow run refresh.yml` from any clone with auth, or push any change under `src/`.
-- **Rotating credentials:** none required; the workflow uses the default `GITHUB_TOKEN`.
+### 9.1 Bootstrap (one-time, performed by Claude Code on `atom`)
+
+The "no human operators" framing in §1 applies to *steady-state* operation. The very first deploy still requires Claude Code to be running on `atom`, because that is the only host with push authority for the user's GitHub account. The bootstrap steps are:
+
+1. Create the public repo via `gh repo create akaihola/jazz-calendar-helsinki-unified --public --source=. --push`.
+2. Enable GitHub Pages: `gh api repos/akaihola/jazz-calendar-helsinki-unified/pages -X POST -f source.branch=main -f source.path=/docs`.
+3. Trigger the first run: `gh workflow run refresh.yml`.
+4. Confirm the published feed at the public URL.
+
+After this, no human or specific-host action is required.
+
+### 9.2 Steady state
+
+- The workflow runs every 6 hours unattended.
+- Triggering an out-of-band refresh: `gh workflow run refresh.yml` from any clone with auth, or push any change under `src/`.
+- Rotating credentials: none required; the workflow uses the default `GITHUB_TOKEN`.
 
 ## 10. Cost & maintenance
 
@@ -249,9 +297,12 @@ These three commands cover ~all expected diagnostics.
 
 - **Partial-success mode:** if one upstream is down, publish a feed from the other plus a synthetic VEVENT noting the degraded state. Requires a state file or a query of the previous output.
 - **Feed validation badge** in `README.md` showing the timestamp of the last successful merge.
+- **Last-merge timestamp on `docs/index.html`** extracted from the most recent commit message (free observability without a separate badge).
+- **Quarterly fixture refresh job** that opens a PR re-capturing `tests/fixtures/` from upstream, so format-drift tests stay realistic.
 - **Custom domain** if `akaihola.github.io/jazz-calendar-helsinki-unified` is unsatisfactory.
 - **Geographic filtering** if the user later decides to restrict to Helsinki metro.
 - **Description merging** when a collision is found, instead of dropping one source.
+- **Content-stable DTSTAMP** to eliminate commit churn, if the per-run commit pattern in §7 becomes a problem.
 
 ## 12. Open items
 
