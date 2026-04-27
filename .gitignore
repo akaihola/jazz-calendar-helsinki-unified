@@ -1,0 +1,23 @@
+# Sandbox guard placeholders (char-device files) — not project content
+.bash_profile
+.bashrc
+.gitconfig
+.gitmodules
+.idea
+.mcp.json
+.profile
+.ripgreprc
+.vscode
+.zprofile
+.zshrc
+
+# Local Python tooling
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# Local fetched feeds (test artifacts)
+/tmp-feeds/
