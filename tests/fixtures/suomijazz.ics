@@ -1,0 +1,716 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+X-WR-CALNAME: Tulevia keikkoja
+PRODID:GIGPRESS 2.0 WORDPRESS PLUGIN
+CALSCALE:GREGORIAN
+X-WR-TIMEZONE:Etc/GMT
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:GMT
+BEGIN:STANDARD
+DTSTART:20071028T010000
+TZOFFSETTO:+0000
+TZOFFSETFROM:+0000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+SUMMARY:Gilad Hekselman Trio at Koko Jazz Club
+DESCRIPTION:Price: 25-38 €+ lippupalvelumaksu. Notes: New Yorkin seuratuimpia jazzkitaran soihdukantajia on virtuoottinen Gilad Hekselman. Monipuolisesti perinteestä ammentava Hekselman on saanut kollegoiden jakamattoman huomion  suuret yleisöt liikkeelle. Koko Jazz Clubille Hekselman tuo tullessaan basisti Orlando Ie Flemingin ja rumpali Ofri Nehemyan. Varaa lippusi ajoissa kevään supervierailuun. Gilad Hekselman\, guitar\, Orlando Ie Fleming bass\, Ofri Nehemya drums. 
+LOCATION:Koko Jazz Club\, Hämeentie 3\, Helsinki\, FI
+UID:20260427T160000Z-8874-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260427T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260427T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Monday Jazz Happening at Rica Bar
+DESCRIPTION:Price: Vapaa pääsy. Notes: Mathias Sandberg Trio. Monday Jazz Happening järjestetään Turun konservatorion ja Jazz City Turku ry:n yhteistuotantona yhteistyössä Rica Barin kanssa. Tapahtuma juhlii kaudella 2025-2026 jo 20. lukuvuottaan! Monday Jazz Happeningissa ensimmäisen setin soittaa aina illan yhtye klo 19 alkaen\, ja keikan jälkeen alkavat vapaat jamit. Maanantaijazzit ovat kaikille avoin tapahtuma ja sisäänpääsy on maksuton! 
+LOCATION:Rica Bar\, Kristiinankatu 5\, Turku\, FI
+UID:20260427T160000Z-8900-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260427T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260427T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Bill Frisell & Eyvind Kang at Promenadisali
+DESCRIPTION:Price: 79/25 €. Notes: Maailman kaikkien aikojen arvostetuimpiin jazz-crossover-kitaristeihin lukeutuva Grammy-palkittu Bill Frisell saapuu huhtikuussa Suomeen ensi kertaa aasialais-islantilaisen huippuviulisti Eyvind Kangin kanssa. Duon keikka juhlistaa porilaisen Validi Karkia -klubin 15 vuoden taivalta ja on ainoa esiintyminen Suomessa. Frisellin edellinen Porin vierailu tapahtui samoissa merkeissä - Validissa\, tuolloin juhlittiin klubin 10v. merkkipäivää trio-kokoonpanolla. Yksi merkittävimmistä ja tunnistettavimmista modernin jazzkitaran äänistä\, amerikkalaisen Grammy-palkitun Bill Frisellin ura pitää sisällään kymmeniä soololevyjä ja satoja levytyksiä John Zornista Elvis Costelloon ja Marianne Faithfullista Norah Jonesiin. Hänet on useana vuonna valittu amerikkalaisen jazzlehti DownBeatin kriitikkoäänestyksissä Vuoden parhaaksi kitaristiksi ja on Pat Methenyn sekä John Scofieldin ohella yksi suurista jazzkitaran visionääreistä. Olennaisena ECM-levy-yhtiön artistina 80-luvun alusta saakka\, Frisellin musiikki on seikkaillut folkin\, countryn\, Americanan ja elokuvamusiikin vaikutteiden parissa. 2011 ilmestynyt All We Are Saying -albumi teki kunniaa John Lennonin sävellyksille. 2019 Frisell debytoi Blue Note -levymerkillä julkaisten levyn Harmony\, jolla isossa roolissa oli vokalisti Petra Haden. Nykyisellä triolla levytetty Blue Note -albumi Valentine valittiin DownBeat-lehden kriitikoiden toimesta vuoden 2020 parhaaksi Beyond Album -kategoriassa.  2024 julkaistu Orchestras on tuplalevy\, jossa Bill esiintyy 60-henkisen Brysselin Filharmonisen orkesterin solistina sekä 11-henkisen Umbria Jazz Orchestran kanssa. Aasialais-islantilaistaustainen Oregonissa syntynyt viulisti-säveltäjä-sovittaja Eyvind Kang on ollut Bill Frisellin yhteistyökumppani jo 30 vuoden ajan yhteensä kymmenellä eri levyllä. Kangin muita tärkeitä pitkäaikaisia soittokavereita ovat olleet Laurie Anderson ja John Zorn. Eyvind on kirjoittanut sovituksia yhtyeille Sunn O))) ja  Blonde Redhead sekä vieraillut muusikkona Mr. Bunglen\, Secret Chiefs 3:n\, Animal Collectiven ja Boriksen levyillä. Kang on julkaissut 15 soololevyä pääosin Mike Pattonin Ipecac- ja John Zornin Tzadik-levymerkeille. 
+LOCATION:Promenadisali\, Yrjönkatu 17\, Pori\, FI
+UID:20260427T160000Z-9059-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260427T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260427T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Mathias Sandberg Trio at Porvoon kaupunginkirjasto
+DESCRIPTION:Notes: Jazzkitaristi ja säveltäjä Mathias Sandberg\, jota amerikkalaisessa musiikkilehdessä Jazziz Magazine on kutsuttu "yhdeksi Suomen parhaiten varjelluista salaisuuksista"\, kuuluu maamme aktiivisimpiin muusikoihin. Hän on opiskellut New Yorkin Manhattan School of  Musicissa ja Bostonin Berklee College of Musicissa\, ja työskennellyt mm. Georg Riedelin\, Brian Charetten\, Nick Mancinin\, Peter  Asplundin\, Teppo Mäkysen ja Manuel Dunkelin kanssa. Sandberg tekee vuosittain satakunta konserttia ja on kiertänyt sekä Euroopassa että Yhdysvalloissa. Hänen triolevyt ovat saaneet ylistäviä arvosteluja molemmilla puolilla Atlanttia\, ja niitä on soitettu ahkerasti jazzradiokanavilla ympäri maailmaa. Kiertueella kuullaan trion omalaatuista ”hard swingin'\, groovy &amp\; soulful jazz”-sekoitusta vahvoilla melodioilla\, rytmisesti leikkisää improvisaatiota ja lähes telepaattista yhteissoittoa. 
+LOCATION:Porvoon kaupunginkirjasto\, Papinkatu 20\, Porvoo\, FI
+UID:20260428T143000Z-8887-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260428T143000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260428T143000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Sörkan Ruusu Weekly Jazz Session at Musiikkitalo
+DESCRIPTION:
+LOCATION:Musiikkitalo\, Mannerheimintie 13\, Helsinki\, FI
+UID:20260428T150000Z-8991-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260428T150000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260428T150000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FusionFour at Ravintola Poppari
+DESCRIPTION:Price: Vapaa pääsy. Notes: Musiikinopintojen päättökonsertti. Fuusiojazzia ja progea.. Jukka Kalliomäki – Kitara\, Eero Uusimäki – Basso\, Teemu Kesäniemi – Rummut\, Veeti Vierimaa – Koskettimet. 
+LOCATION:Ravintola Poppari\, Puistokatu 2-4\, Jyväskylä\, FI
+UID:20260429T170000Z-8799-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260429T170000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260429T170000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Sid Hille at Temppeliaukion kirkko
+DESCRIPTION:Price: vierailumaksu. Notes: Pianisti Sid Hille soittaa monipuolista\, meditatiivista musiikkia kirkon flyygelillä. Konsertissa kuullaan sekä artistin omaa että muiden tuotantoa. Kirkon aulassa on myynnissä Hillen levytuotantoa\, muun muassa Temppeliaukiolla nauhoitetut CD:t. 
+LOCATION:Temppeliaukion kirkko\, Lutherinkatu 3\, Helsinki\, FI
+UID:20260430T071500Z-9071-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260430T071500Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260430T071500Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Manala Afterwork Jazz feat. Olli Soikkeli at Ravintola Manala
+DESCRIPTION:Price: Vapaa pääsy. Notes: Vappuspecial! Kitaravirtuoosi Olli Soikkeli piipahtaa New Yorkista laukaisemaan Etu-Töölön svengaavimmat vappuetkot käyntiin housebandin säestyksellä vappuaattona 30.4. klo 17:00. Älä missaa tätä! Afterwork Jazz on vuonna 2018 perustettu\, viikoittainen jazzklubi Helsingin ydinkeskustassa. Syys- ja kevätkaudella joka torstai Manalan baari muuttuu New Yorkin mutkattomien jazzravintoloiden inspiroimaksi tunnelmalliseksi kapakaksi\, jossa yhdistyvät kursailemattomat puitteet\, korkealaatuinen musiikki sekä pirullisen hyvä ruoka ja juoma.  Konsertteihin on aina vapaa pääsy\, joten voit kävellä sisään ja ulos miten mielit! Hyvän istumapaikan halutessaan on kuitenkin hyvä idea tulla paikalle ajoissa. Soitto soi torstaisin klo 17-19. Tarkista seuraavan Afterwork Jazzin ajankohta tapahtumakalenteristamme Bottan sivuilta. Manala House Trio: Arto Ikävalko – piano\, Joonas Tuuri – basso\, Ville Luukkonen – rummut. 
+LOCATION:Ravintola Manala\, Dagmarinkatu 2\, Helsinki\, FI
+UID:20260430T140000Z-8956-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260430T140000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260430T140000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Groovy Eyes at G Livelab Tampere
+DESCRIPTION:Price: 25 € Sisältää eteispalvelumaksun 3 €. Notes: G Livelabin vappu. G Livelabin konsertit ovat ikärajattomia. Ravintola anniskelee normaalisti.  Katsomo: Salissa on sekä istumapaikkoja että tanssitilaa. G Livelabin vappuaaton hulinoita tähdittää legendaarinen Groovy Eyes! Keikan yhteydessä G Livelabin terassilla on luvassa myös Soul Power -dj-setti. 33-vuotista taivaltaan juhliva Groovy Eyes on bändi\, joka nauttii yhä kulttisuosiota ympäri maailman\,  etenkin Pohjois ja Etelä-Amerikassa\, missä lukuisat bändit esittävät Groovy Eyes originellikappaleita keikoillaan. Bändi tuli myös monille tutuksi aikanaan esiintyessään 1990-luvulla mm. Metsolat-sarjassa\, ja voittaessaan Levyraadin vuonna 2003. Nimenomaan kyseisessä bändissä saivat aikanaan 1990-luvulla muusikon tulikasteen teini-ikäiset tulevat huippupelimannit kuten Masa Orpana ja Ville Rauhala\, jotka jatkavat edelleen bändissä. Kokoonpanon 100% omavaraisen herkullisessa gumbossa yhdistyvät Swing\, Bebop\, New Orleans Rhythm &amp\; Blues\, Zydeco ja Soul Jazz ja Karibian rytmit\, jotka laulettuina sekä instrumentaaleina ovat nautittavuudessan täysin maailmanluokkaa. Luvassa on suvereenisti svengaava\, rikas\, ajaton\, maanläheinen musiikillinen ilotulitus\, joka pitää varmasti tunnelman kuumana läpi keikan.  Jo' Buddy: laulu\, kitara (One O'Clock Humph\, Diz &amp\; The Doormen)\, Masa Orpana: saksofonit\, huilu (Masa Orpana Honk\, Anssi Tikanmäen Orkesteri)\, Saku Järvinen: piano\, urut (Olmarin Unioni)\, Ville Rauhala: kontrabasso (Black Motor\, Hot Heroes\, Pauli Hanhiniemi)\, Down Home King III: rummut (Pietarin Spektaakkeli\, Tad Robinson). 
+LOCATION:G Livelab Tampere\, Puutarhakatu 1\, Tampere\, FI
+UID:20260430T170000Z-8931-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260430T170000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260430T170000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:00610 Jazz Club at Ravintola Sophie
+DESCRIPTION:Price: Vapaa pääsy. Notes: Maja Mannila: laulu\, koskettimet\, Johannes Granroth: kitara\, basso\, Joonas Leppänen: rummut. 
+LOCATION:Ravintola Sophie\, Koskelantie 9\, Helsinki\, FI
+UID:20260503T150000Z-9019-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260503T150000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260503T150000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Monday Jazz Happening at Rica Bar
+DESCRIPTION:Price: Vapaa pääsy. Notes: Sjöroos/Kajamies/Huhtala. Monday Jazz Happening järjestetään Turun konservatorion ja Jazz City Turku ry:n yhteistuotantona yhteistyössä Rica Barin kanssa. Tapahtuma juhlii kaudella 2025-2026 jo 20. lukuvuottaan! Monday Jazz Happeningissa ensimmäisen setin soittaa aina illan yhtye klo 19 alkaen\, ja keikan jälkeen alkavat vapaat jamit. Maanantaijazzit ovat kaikille avoin tapahtuma ja sisäänpääsy on maksuton! 
+LOCATION:Rica Bar\, Kristiinankatu 5\, Turku\, FI
+UID:20260504T160000Z-8901-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260504T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260504T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Eero Savela Quartet at Hakasalmen huvila
+DESCRIPTION:Price: 22 €\, eläkeläiset\, työttömät ja Helsinki Jazz ry:n jäsenet 17€\, opiskelijat 14 €\, kahdelle 17 + 17 €.. Notes: jaZZanti. Eero Savela: trumpetti\; Seppo Kantonen: Wurlizer sähköpiano\; Joonas Leppänen: rummut ja Eero Tikkanen: kontrabasso. 
+LOCATION:Hakasalmen huvila\, Mannerheimintie 13b\, Helsinki\, FI
+UID:20260504T160000Z-8999-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260504T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260504T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Sörkan Ruusu Weekly Jazz Session at Musiikkitalo
+DESCRIPTION:
+LOCATION:Musiikkitalo\, Mannerheimintie 13\, Helsinki\, FI
+UID:20260505T150000Z-8992-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260505T150000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260505T150000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Bar Favelan Tiistaijatsit at Bar Favela
+DESCRIPTION:Price: Vapaa pääsy. Notes: Matthieu Metzger\, saksofoni\, Paul Brousseau\, koskettimet\, Mikko Innanen\, saksofonit jne. 
+LOCATION:Bar Favela\, Mechelininkatu 13\, Helsinki\, FI
+UID:20260505T160000Z-9009-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260505T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260505T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Sid Hille at Temppeliaukion kirkko
+DESCRIPTION:Price: vierailumaksu. Notes: Pianisti Sid Hille soittaa monipuolista\, meditatiivista musiikkia kirkon flyygelillä. Konsertissa kuullaan sekä artistin omaa että muiden tuotantoa. Kirkon aulassa on myynnissä Hillen levytuotantoa\, muun muassa Temppeliaukiolla nauhoitetut CD:t. 
+LOCATION:Temppeliaukion kirkko\, Lutherinkatu 3\, Helsinki\, FI
+UID:20260506T071500Z-9072-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260506T071500Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260506T071500Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Django Collective Helsinki Club at Juttutupa
+DESCRIPTION:Price: Vapaa pääsy. Notes: Feat. Kyösti Mäkimattila. Suomalaisen Jazz Manouche -musiikin ykkösnimenä tunnettu ryhmä on palannut klubinkonseptillaan Juttikseen! Aki Haurun johtama yhtye on vuodesta 2011 lähtien elävöittänyt kaupunkikulttuuria ja maakuntien musiikkielämää juurevalla ja hyväntuulisella akustisella musiikillaan 1920-50 -luvuilta Django Reinhardtin ja Stéphane Grappellin tyyliin. Luvassa on jälleen armotonta svengiä sekä jännittäviä kohtaamisia huippuvieraiden kanssa. Ryhmä esittää perinnetietoisen ja jalkaan menevän swingin ohella myös omia sävellyksiään\, joissa vanha sekoittuu raikkaalla ja kekseliäällä tavalla uuteen moderniin jazzilliseen ilmaisuun. Autenttisesti pelkillä jousi- ja kielisoittimilla esitetty musiikki tempaa mukaansa. Django Collective Helsinki: Laura Airola - viulu\, Aki Hauru - kitara\, Otto Porkkala - kitara\, Kalle Outila - kitara\, Juuso Rinta - kontrabasso. 
+LOCATION:Juttutupa\, Säästöpankinranta 6\, Helsinki\, FI
+UID:20260506T160000Z-8914-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260506T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260506T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Quartet Ajaton at Ravintola Poppari
+DESCRIPTION:Price: 20/15 €\, kannatuslippu 30 €. Notes: Jazz Jkl Live. Laulaja Mia Simanaisen ainutlaatuinen kvartetti kutsuu tyylirajoja ja aikakausia ylittävällä musiikillaan ja instrumentaatiollaan mukaan kiehtovaan löytöretkeen\, joka puhaltaa genremääritelmät taivaan tuuliin! Quartet Ajaton on tyylillisesti itsenäinen suunnannäyttäjä. Yhtye juhlistaa kymmenvuotista taivaltaan uudella albumijulkaisulla ja Suomen Jazzliiton järjestämällä levynjulkaisukiertueella. Yhtyeen kolmas pitkäsoitto\, “Fin”\, korostaa musiikin kotimaista alkuperää osuvasti juuri Jazz Suomi 100 -juhlavuotena. Uuden ohjelmiston ja levyn säveltäjänimiä ovat Jean Sibelius\, Armas Järnefelt\, Unto Mononen sekä Mia Simanainen ja Kari Ikonen\, ja sen laulukielinä kuullaan suomea\, ruotsia ja englantia. Laulaja Mia Simanaisen perustama Quartet Ajaton on luonut oman kamarimusiikillisen maailmansa harvinaisella laulun\, bandoneónin\, Moog-syntetisaattorin ja sellon muodostamalla soitinnuksella. Kvartetin huippumuusikoiden taustat ulottuvat laajalle: jazzmusiikista barokkiin\, argentiinalaisesta tangosta nykymusiikkiin\, improvisointiin ja kaiken maailman kokeiluihin.  Mia Simanainen – laulu\,  Henrik Sandås – bandoneón\, Kari Ikonen – Moog-syntetisaattori\, Aino Juutilainen – sello. 
+LOCATION:Ravintola Poppari\, Puistokatu 2-4\, Jyväskylä\, FI
+UID:20260506T160000Z-9101-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260506T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260506T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:UMO Helsinki Jazz Orchestra & Jazzmeia Horn & Jukka Eskola at Turun kaupunginteatteri
+DESCRIPTION:Price: 20-39 €. Notes: Jazzin sielukas supertähti\, sensaatiomainen laulaja ja lauluntekijä Jazzmeia Horn kruunaa UMO Helsinki Jazz Orchestran 50-vuotisjuhlakauden toukokuussa myös Turussa!  UMO saa solistivieraakseen yhdysvaltalaisen jazzlaulajan ja lauluntekijän Jazzmeia Hornin (s. 1991). Horn on sielukas äänivirtuoosi ja tarinankertoja\, jonka tyylissä kuuluvat myös soul- ja gospel-vivahteet. Hornilla on kolme Grammy-ehdokkuutta ja hän on pokannut palkinnot mm. Thelonious Monk -instituutin kansainvälisessä jazzkilpailussa 2015 ja Sarah Vaughanin jazzlaulukilpailussa vuonna 2013. Niin kriitikot kuin fanitkin ovat verranneet häntä ikonisiin jazzlaulajiin\, kuten Betty Carteriin ja Nancy Wilsoniin. Jazzmeia Horn on levyttänyt kolmen sooloalbuminsa lisäksi 15-henkisen big bandinsä Noble Forcen kanssa Grammy-ehdokkuuden saaneen Dear Love -albumin (2021). Hän on tehnyt yhteistyötä myös saksalaisen WDR Big Bandin kanssa. Toukokuun konsertissa kuullaan ohjelmistoa molemmista projekteista. Aiemmin UMOn trumpettisektiossa ja solistina vieraillut Jukka Eskola (s. 1978) debytoi tässä konsertissa UMOn kapellimestarina. Omien yhtyeidensä\, kuten Lassy–Eskola: Nordic Stewn ja Jukka Eskola Soul Trion lisäksi aktiivisesti eri kokoonpanoissa soittava trumpetisti on nähty muun muassa The Five Corners Quintetin ja Ricky-Tick Big Bandin riveissä. Trumpetistin ansioluettelosta löytyy muun muassa seitsemän soololevyä\, satoja levytyksiä\, Pori Jazzin Vuoden taiteilija -palkinto\, Emma-ehdokkuuksia\, teatteriproduktioita ja opetustöitä. Eskolan voi bongata myös television viihdeohjelmien orkestereista. 
+LOCATION:Turun kaupunginteatteri\, Itäinen Rantakatu 14\, Turku\, FI
+UID:20260506T163000Z-8797-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260506T163000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260506T163000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Manala Afterwork Jazz at Ravintola Manala
+DESCRIPTION:Price: Vapaa pääsy. Notes: Afterwork Jazz on vuonna 2018 perustettu\, viikoittainen jazzklubi Helsingin ydinkeskustassa. Syys- ja kevätkaudella joka torstai Manalan baari muuttuu New Yorkin mutkattomien jazzravintoloiden inspiroimaksi tunnelmalliseksi kapakaksi\, jossa yhdistyvät kursailemattomat puitteet\, korkealaatuinen musiikki sekä pirullisen hyvä ruoka ja juoma.  Konsertteihin on aina vapaa pääsy\, joten voit kävellä sisään ja ulos miten mielit! Hyvän istumapaikan halutessaan on kuitenkin hyvä idea tulla paikalle ajoissa. Soitto soi torstaisin klo 17-19. Tarkista seuraavan Afterwork Jazzin ajankohta tapahtumakalenteristamme Bottan sivuilta. Manala House Trio: Arto Ikävalko – piano\, Joonas Tuuri – basso\, Ville Luukkonen – rummut. 
+LOCATION:Ravintola Manala\, Dagmarinkatu 2\, Helsinki\, FI
+UID:20260507T140000Z-8947-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260507T140000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260507T140000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:UMO Helsinki Jazz Orchestra & Jazzmeia Horn & Jukka Eskola at Savoy-teatteri
+DESCRIPTION:Price: alk. 36 €. Notes: Jazzin sielukas supertähti\, sensaatiomainen laulaja ja lauluntekijä Jazzmeia Horn kruunaa UMO Helsinki Jazz Orchestran 50-vuotisjuhlakauden! UMO saa solistivieraakseen yhdysvaltalaisen jazzlaulajan ja lauluntekijän Jazzmeia Hornin (s. 1991). Horn on sielukas äänivirtuoosi ja tarinankertoja\, jonka tyylissä kuuluvat myös soul- ja gospel-vivahteet. Hornilla on kolme Grammy-ehdokkuutta ja hän on pokannut palkinnot mm. Thelonious Monk -instituutin kansainvälisessä jazzkilpailussa 2015 ja Sarah Vaughanin jazzlaulukilpailussa vuonna 2013. Niin kriitikot kuin fanitkin ovat verranneet häntä ikonisiin jazzlaulajiin\, kuten Betty Carteriin ja Nancy Wilsoniin. Jazzmeia Horn on levyttänyt kolmen sooloalbuminsa lisäksi 15-henkisen big bandinsä Noble Forcen kanssa Grammy-ehdokkuuden saaneen Dear Love -albumin (2021). Hän on tehnyt yhteistyötä myös saksalaisen WDR Big Bandin kanssa. Toukokuun konsertissa kuullaan ohjelmistoa molemmista projekteista. Aiemmin UMOn trumpettisektiossa ja solistina vieraillut Jukka Eskola (s. 1978) debytoi tässä konsertissa UMOn kapellimestarina. Omien yhtyeidensä\, kuten Lassy–Eskola: Nordic Stewn ja Jukka Eskola Soul Trion lisäksi aktiivisesti eri kokoonpanoissa soittava trumpetisti on nähty muun muassa The Five Corners Quintetin ja Ricky-Tick Big Bandin riveissä. Trumpetistin ansioluettelosta löytyy muun muassa seitsemän soololevyä\, satoja levytyksiä\, Pori Jazzin Vuoden taiteilija -palkinto\, Emma-ehdokkuuksia\, teatteriproduktioita ja opetustöitä. Eskolan voi bongata myös television viihdeohjelmien orkestereista. 
+LOCATION:Savoy-teatteri\, Kasarmikatu 46-48\, Helsinki\, FI
+UID:20260507T160000Z-8806-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260507T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260507T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Quartet Ajaton at Bar Ö
+DESCRIPTION:Price: 12-22 €. Notes: Flame Jazz.Jazz City Turun kevätkauden päättävä Quartet Ajaton on laulaja Mia Simanaisen perustama yhtye\, jossa erilaisista taustoista tulevat huippuinnovatiiviset muusikot punovat taitonsa yhteen. Yhtyeen arvoituksellinen soitinyhdistelmä on todennäköisesti ainoa laatuaan koko maailmassa! Kvartetin uusi ohjelmisto sisältää kotimaisen kulttuurimme ikonisia sävelmiä – tangot\, sibeliukset\, kansansävelmät ja karjahuudot kaikuvat\, tanssivat ja möyrivät ja laittavat kuulijan veren kiertämään. Musiikki vuoroin hehkuu ja vuoroin jäätää. Quartet Ajaton on tyylillisesti itsenäinen tiennäyttäjä ja sen kymmenvuotinen taival huipentuu keväällä 2026 albumijulkaisuun ja Jazzliiton järjestämään levynjulkaisukiertueeseen. Yhtyeen kolmas pitkäsoitto Fin korostaa musiikin kotimaista alkuperää osuvasti juuri Jazz Suomi 100 -juhlavuotena. Edellisiä julkaisuja seuraten kvartetin musiikissa säännöt on tehty rikottaviksi. Laulukielinä kuullaan suomea\, ruotsia ja englantia. Mia Simanainen – laulu\,  Henrik Sandås – bandoneón\, Kari Ikonen – Moog-syntetisaattori\, Aino Juutilainen – sello. 
+LOCATION:Bar Ö\, Linnankatu 7\, Turku\, FI
+UID:20260508T160000Z-8791-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260508T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260508T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Presidentin jazzillat at Pub Adjutantti
+DESCRIPTION:Price: Vapaa pääsy. Notes: Tuuri\, Lintula ja Kouvo + jazzjamit. Presidentin toukokuun jazzjamit avaa Suomen striimatuimman jazzmuusikon\, Joonas Tuurin\, big bandistaan tunnetun Henri Lintulan ja klubi-isäntä Lassi Kouvon trio. Jazzjamit housebandin setin jälkeen! Joonas Tuuri\, kontrabasso\, Henri Lintula\, rummut\, Lassi Kouvo\, piano. Keikka alkaa klo 19\, ilta jatkuu jazzjameilla klo 20. 
+LOCATION:Pub Adjutantti\, Eteläinen Rautatiekatu 4\, Helsinki\, FI
+UID:20260508T160000Z-8849-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260508T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260508T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Towerin jazzlauantai at The Tower Wine and Craft Beer
+DESCRIPTION:Price: Vapaa pääsy. Notes: Vibrafonisti Ilkka Uksila vierailee Towerin jazzlauantaissa 9.5.! Uksilan kirjava tyylilajien tuntemus ja laaja-alainen improvisointikokemus ovat johdattaneet hänet esiintymään lukuisten yhtyeiden riveissä. Hän on tuttu muun muassa yhtyeistä The Watercolors\, Tomi Nikku 5tet ja omasta UXILA EXILEstään. Towerin jazzlauantaissa Ilkka Uksila esittää omia sävellyksiään sekä jazzstandardeja yhdessä klubi-isäntä pianisti Lassi Kouvon kanssa. Ilkka Uksila\, vibrafoni\, Lassi Kouvo\, piano. 
+LOCATION:The Tower Wine and Craft Beer\, Firdonkatu 2B\, Helsinki\, FI
+UID:20260509T140000Z-8759-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260509T140000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260509T140000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Monday Jazz Happening at Rica Bar
+DESCRIPTION:Price: Vapaa pääsy. Notes: Joonas Tuuri Quartet. Monday Jazz Happening järjestetään Turun konservatorion ja Jazz City Turku ry:n yhteistuotantona yhteistyössä Rica Barin kanssa. Tapahtuma juhlii kaudella 2025-2026 jo 20. lukuvuottaan! Monday Jazz Happeningissa ensimmäisen setin soittaa aina illan yhtye klo 19 alkaen\, ja keikan jälkeen alkavat vapaat jamit. Maanantaijazzit ovat kaikille avoin tapahtuma ja sisäänpääsy on maksuton! 
+LOCATION:Rica Bar\, Kristiinankatu 5\, Turku\, FI
+UID:20260511T160000Z-8902-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260511T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260511T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Baumann – Pietilä – Soo at Hakasalmen huvila
+DESCRIPTION:Price: 22 €\, eläkeläiset\, työttömät ja Helsinki Jazz ry:n jäsenet 17€\, opiskelijat 14 €\, kahdelle 17 + 17 €.. Notes: jaZZanti. Franziska Baumann (CH): ääni ja eloelektoroniikka\; Esa Pietilä: tenorisaksofoni ja eloelektroniikka ja Mart Soo (EE): sähkökitara ja eloelektroniikka. 
+LOCATION:Hakasalmen huvila\, Mannerheimintie 13b\, Helsinki\, FI
+UID:20260511T160000Z-9000-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260511T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260511T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:UMO Helsinki Ensemble at Savoy-teatteri
+DESCRIPTION:Price: Vapaa pääsy. Notes: "Latin jazz". Jazzia lounaaksi – kyllä kiitos! Savoy-teatterin ja UMO Helsinki Jazz Orchestran toivotut lounaskonsertit jatkuvat taas kevätkaudella 2026! Tämän konsertin ilmaisliput ovat varattavissa ke 22.4. klo 15 alkaen Savoy-teatterista ja Lippu.fi:stä\,. Toukokuun lounaskonsertissa jazzin sielukkaat melodiat ja improvisaatio lyövät kättä Latinalaisen Amerikan elämäniloisten rytmien kanssa! Anna rytmin viedä New Yorkin savuisille jazzklubeille ja Kuuban ja Brasilian lämpöön.  Latin jazzin juuret ulottuvat 1900-luvun alkuun\, jolloin kuubalaiset siirtolaiset toivat Yhdysvaltoihin synkopoituja rytmejään\, jotka vaikuttivat ajan pioneerisäveltäjiin. Genren varsinainen nousu tapahtui 1940-luvulla New Yorkissa\, kun kuubalaiset muusikot sulauttivat jazzin kuubalaisiin tanssirytmeihin\, kuten mamboon ja rumbaan. Myöhemmin 1950–1960-luvuilla brasilialaiset vaikutteet rikastuttivat genren pehmeämmillä sambarytmeillä\, ja näin syntyi bossa nova. Latin jazz on musiikillista dialogia eri mannerten välillä – hyväntuulista\, energistä ja tanssittavaa!  UMOn riveistä koottua pienempää kokoonpanoa UMO Helsinki Ensembleä luotsaa lead-pasunisti Kasperi Sarikoski\, joka on myös suunnitellut konsertin sisällön. Konsertti on osa UMOn 50-vuotisjuhlakauden ohjelmistoa. 
+LOCATION:Savoy-teatteri\, Kasarmikatu 46-48\, Helsinki\, FI
+UID:20260512T090000Z-8809-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260512T090000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260512T090000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Sörkan Ruusu Weekly Jazz Session at Musiikkitalo
+DESCRIPTION:
+LOCATION:Musiikkitalo\, Mannerheimintie 13\, Helsinki\, FI
+UID:20260512T150000Z-8993-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260512T150000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260512T150000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Silva Kallionpää Quartet at Teerenpeli
+DESCRIPTION:Price: 15/10 €\, jameihin vapaa pääsy. Notes: Lahti Jazz Club. Keikka + jamit klo 21. 
+LOCATION:Teerenpeli\, Vapaudenkatu 20\, Lahti\, FI
+UID:20260512T160000Z-8925-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260512T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260512T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Sid Hille at Temppeliaukion kirkko
+DESCRIPTION:Price: vierailumaksu. Notes: Pianisti Sid Hille soittaa monipuolista\, meditatiivista musiikkia kirkon flyygelillä. Konsertissa kuullaan sekä artistin omaa että muiden tuotantoa. Kirkon aulassa on myynnissä Hillen levytuotantoa\, muun muassa Temppeliaukiolla nauhoitetut CD:t. 
+LOCATION:Temppeliaukion kirkko\, Lutherinkatu 3\, Helsinki\, FI
+UID:20260513T071500Z-9073-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260513T071500Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260513T071500Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:James Carter Organ Trio at G Livelab
+DESCRIPTION:Price: 50 € + 4 € eteispalvelumaksu. Notes: Saksofonivirtuoosi James Carter saapuu G Livelabiin Organ Trio -kokoonpanolla ja ohjelmistolla “Coltrane: A Centennial Supreme”. Luvassa on Carterin huippukokoonpanon kunnianosoitus 100 vuotta sitten syntyneelle John Coltranelle. Yhdysvaltalainen saksofonisti James Carter on yksi menestyneimmistä ja rakastetuimmista nykyjazzmuusikoista. Carter aloitti uransa jo 17-vuotiaana noustessaan lavalle yhdessä Wynton Marsalin kanssa\, ja 23-vuotiaana hän julkaisi läpimurtodebyyttinsä JC On the Set\, jota pidettiin uuden jazzmestarien sukupolven merkkiteoksena. Seuraavien vuosikymmenten aikana Carter on vakiinnuttanut asemansa yhtenä aikamme karismaattisimmista ja monipuolisimmista sooloartisteista. Hänen hteistyökumppaneihinsa lukeutuvat muun muassa Lester Bowie\, Julius Hemphill\, Dee Dee Bridgewater\, Kathleen Battle\, Frank Lowe &amp\; Saxemble\, World Saxophone Quartet sekä Wynton Marsalis. Carter on hionut taitonsa hämmästyttävälle tekniselle tasolle ja hallitsee koko saksofoniperheen sekä huilun ja klarinetin. Helsingin Sanomat kuvaili vuonna 1997 nuorta nosteessa olevaa James Carteria näin: “James Carter on saksofonisti vailla vertaa. Tai verrata voi\, mutta tuskin muihin fonisteihin. Carter on klarinetin Michael Johnsson\, sopraanosaksofonin Jimi Hendrix\, alton Michael Jordan ja tenorin Tiger Woods\, jonka kaikki puhallukset ja soinnit lentävät pari sfääriä muita pitemmälle.” James Carter – Saksofonit\, Gerard Gibbs – Hammond B3 -urut\, Alex White – Rummut. 
+LOCATION:G Livelab\, Pieni Roobertinkatu 16\, Helsinki\, FI
+UID:20260513T170000Z-8936-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260513T170000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260513T170000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:James Carter Organ Trio at G Livelab Tampere
+DESCRIPTION:Price: 53 € Sisältää eteispalvelumaksun 3 €. Notes: Saksofonivirtuoosi James Carter saapuu G Livelabiin Organ Trio -kokoonpanolla ja ohjelmistolla “Coltrane: A Centennial Supreme”. Luvassa on Carterin huippukokoonpanon kunnianosoitus 100 vuotta sitten syntyneelle John Coltranelle. Yhdysvaltalainen saksofonisti James Carter on yksi menestyneimmistä ja rakastetuimmista nykyjazzmuusikoista. Carter aloitti uransa jo 17-vuotiaana noustessaan lavalle yhdessä Wynton Marsalin kanssa\, ja 23-vuotiaana hän julkaisi läpimurtodebyyttinsä JC On the Set\, jota pidettiin uuden jazzmestarien sukupolven merkkiteoksena. Seuraavien vuosikymmenten aikana Carter on vakiinnuttanut asemansa yhtenä aikamme karismaattisimmista ja monipuolisimmista sooloartisteista. Hänen  hteistyökumppaneihinsa lukeutuvat muun muassa Lester Bowie\, Julius Hemphill\, Dee Dee Bridgewater\, Kathleen Battle\, Frank Lowe &amp\; Saxemble\, World Saxophone Quartet sekä Wynton Marsalis. Carter on hionut taitonsa hämmästyttävälle tekniselle tasolle ja hallitsee koko saksofoniperheen sekä huilun ja klarinetin. Helsingin Sanomat kuvaili vuonna 1997 nuorta nosteessa olevaa James Carteria näin: “James Carter on saksofonisti vailla vertaa. Tai verrata voi\, mutta tuskin muihin fonisteihin. Carter on klarinetin Michael Johnsson\, sopraanosaksofonin Jimi Hendrix\, alton Michael Jordan ja tenorin Tiger Woods\, jonka kaikki puhallukset ja soinnit lentävät pari sfääriä muita pitemmälle.” James Carter - Saksofonit\, Gerard Gibbs - Hammond B3 -urut\, Alex White - Rummut. G Livelabin konsertit ovat  kärajattomia. Ravintola anniskelee normaalisti.  Katsomo: pääosin istumakatsomo.. 
+LOCATION:G Livelab Tampere\, Puutarhakatu 1\, Tampere\, FI
+UID:20260514T160000Z-8932-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260514T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260514T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Maunula Unplugged at Maunula-talo
+DESCRIPTION:Price: Vapaa pääsy\, käytössä maksuton ennakkolippu. Notes: Maunula Unplugged: Mattsson/Herrala/Kallio﻿. Maunula Unplugged tuo akustisen musiikin ja intiimin tunnelman Metsäpurosaliin. Sarjan konserteissa kuullaan herkkävireistä ja sielua ravitsevaa musiikkia genreen tai tyylilajiin katsomatta. Mattsson/Herrala/Kallio on tuore\, vuonna 2025 debytoinut kokoonpano\, jossa nuoren polven saksofonistilahjakkuus Oona Mattsson kohtaa Suomen jazzkentän veteraanikompin\, basisti Ville Herralan ja rumpali Mika Kallion. Trion ohjelmisto koostuu tarkoin valituista jazzhistorian helmistä\, herkästi ja vapaasti tulkittuina. 
+LOCATION:Maunula-talo\, Metsäpurontie 4\, Helsinki\, FI
+UID:20260515T150000Z-9060-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260515T150000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260515T150000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Jazz Jkl Collective at Ravintola Poppari
+DESCRIPTION:Price: 15/10 €\, kannatuslippu 30 €. Notes: Perjantain jazzklubi. Jazz Jkl Collective feat. Markku Rinta-Pollari. Jazz Jkl Collective ja saksofonisti Markku Rinta-Pollari taittelevat menneiden vuosikymmenten hittikappaleista improvisointiin sopivia lennokkeja\, jotka liitelevät brasilialais- ja lattarirytmien nosteessa Cole Porterin 1940-luvun Broadwayn öistä Burt Bacharachin kalifornialaisiin auringonnousuihin!  Toukokuun jazzklubin solistivieras\, Jyväskylän musiikkielämän pitkäaikainen pioneeri ja maailmanmusiikkispesialisti\, saksofonisti Markku Rinta-Pollari ja Jazz Jkl Collective tulkitsevat tuttuja kappaleita menneiltä vuosikymmeniltä kesäisinä jazzsovituksina. Ohjelmassa on mm. Cole Porterin\, Burt Bacharachin\, Jimmy Webbin ja Brian Wilsonin kappaleita.   Markku Rinta-Pollari – saksofoni\,  Tuomas Paukku – kitara\, Marian Petrescu – piano\, Pekka Törmänen – basso\, Kasper Halttunen – rummut. 
+LOCATION:Ravintola Poppari\, Puistokatu 2-4\, Jyväskylä\, FI
+UID:20260515T160000Z-9102-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260515T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260515T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Clarion Living Room Jazz at Clarion Living Room Bar & Terrace
+DESCRIPTION:Price: Vapaa pääsy. Notes: Pekka Toivanen ja Lassi Kouvo. Mestarisaksofonisti\, jazzlegenda Pekka Toivanen vierailee Clarionin jazzillassa. Keikalla kuullaan kappaleita Pekan Arkangeli-levyltä svengaavien jazzklassikoiden ohessa. Pianoa soittaa klubi-isäntä Lassi Kouvo svengaavaan tyyliinsä. Tervetuloa nauttimaan jazzista merellisissä maisemissa! 
+LOCATION:Clarion Living Room Bar & Terrace\, Tyynenmerenkatu 2\, Helsinki\, FI
+UID:20260516T140000Z-9106-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260516T140000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260516T140000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Juho Valjakka Trio at Hakasalmen huvila
+DESCRIPTION:Price: 22 €\, eläkeläiset\, työttömät ja Helsinki Jazz ry:n jäsenet 17€\, opiskelijat 14 €\, kahdelle 17 + 17 €.. Notes: jaZZanti. Levynjulkistuskonsertti. Juho Valjakka: piano\; Oskari Siirtola: kontrabasso ja Anssi Tirkkonen: rummut. 
+LOCATION:Hakasalmen huvila\, Mannerheimintie 13b\, Helsinki\, FI
+UID:20260518T160000Z-9001-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260518T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260518T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Sörkan Ruusu Weekly Jazz Session at Musiikkitalo
+DESCRIPTION:
+LOCATION:Musiikkitalo\, Mannerheimintie 13\, Helsinki\, FI
+UID:20260519T150000Z-8994-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260519T150000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260519T150000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Sid Hille at Temppeliaukion kirkko
+DESCRIPTION:Price: vierailumaksu. Notes: Pianisti Sid Hille soittaa monipuolista\, meditatiivista musiikkia kirkon flyygelillä. Konsertissa kuullaan sekä artistin omaa että muiden tuotantoa. Kirkon aulassa on myynnissä Hillen levytuotantoa\, muun muassa Temppeliaukiolla nauhoitetut CD:t. 
+LOCATION:Temppeliaukion kirkko\, Lutherinkatu 3\, Helsinki\, FI
+UID:20260520T071500Z-9074-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260520T071500Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260520T071500Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Jussi Reijonen at Louhisali
+DESCRIPTION:Price: Vapaa pääsy. Notes: sayr on intiimi\, täysin improvisoitu soolokonsertti\, jossa kitaristi ja säveltäjä Jussi Reijonen kuljettaa kuulijat matkalle musiikillisten maailmojen halki. Teräskielisellä akustisella kitaralla ja arabialaisella ‘ud-luutulla esitetty konsertti ammentaa vaikutteita jazzista\, arabialaisesta ja itäafrikkalaisesta musiikista sekä suomalaisesta kansanperinteestä\, heijastaen Reijosen monikulttuurista taustaa ja hänen pitkää uraa transkulttuurisen ilmaisun parissa. sayr ei ainoastaan ylitä maantieteellisiä rajoja – se kutsuu kuulijan pysähtymään\, kuuntelemaan ja kulkemaan mukana hetkessä syntyvän musiikin virrassa. Kesto n. 60-70 min\, ei väliaikaa. 
+LOCATION:Louhisali\, Kaupinkalliontie 10\, Espoo\, FI
+UID:20260520T150000Z-9061-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260520T150000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260520T150000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Manala Afterwork Jazz feat. Varre Vartiainen at Ravintola Manala
+DESCRIPTION:Price: Vapaa pääsy. Notes: Afterwork Jazz on vuonna 2018 perustettu\, viikoittainen jazzklubi Helsingin ydinkeskustassa. Syys- ja kevätkaudella joka torstai Manalan baari muuttuu New Yorkin mutkattomien jazzravintoloiden inspiroimaksi tunnelmalliseksi kapakaksi\, jossa yhdistyvät kursailemattomat puitteet\, korkealaatuinen musiikki sekä pirullisen hyvä ruoka ja juoma.  Konsertteihin on aina vapaa pääsy\, joten voit kävellä sisään ja ulos miten mielit! Hyvän istumapaikan halutessaan on kuitenkin hyvä idea tulla paikalle ajoissa. Soitto soi torstaisin klo 17-19. Tarkista seuraavan Afterwork Jazzin ajankohta tapahtumakalenteristamme Bottan sivuilta. Manala House Trio: Arto Ikävalko – piano\, Joonas Tuuri – basso\, Ville Luukkonen – rummut. 
+LOCATION:Ravintola Manala\, Dagmarinkatu 2\, Helsinki\, FI
+UID:20260521T140000Z-8952-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260521T140000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260521T140000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:April Jazz Club at Original Sokos Hotel Tapiola Garden
+DESCRIPTION:Price: 20/15 €. Notes: Henri Mäntylä Trio feat. Peter Asplundt. Klo 17:30 ovet\, klo 18:00 lämmittelijä\, klo 19:00 pääesiintyjä. 
+LOCATION:Original Sokos Hotel Tapiola Garden\, Tapionaukio 3\, Espoo\, FI
+UID:20260522T150000Z-8842-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260522T150000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260522T150000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Towerin jazzlauantai at The Tower Wine and Craft Beer
+DESCRIPTION:Price: Vapaa pääsy. Notes: Towerin jazzlauantain solistivieraana Suomen merkittävimpiin saksofonisteihin lukeutuva Manuel Dunkel! Dunkel on tullut tunnetuksi mm. vivahteikkaasta soundistaan\, virtuositeetistaan ja vahvasta post-bop-tyylisestä ilmaisustaan. Sibelius-Akatemiasta jazzmusiikin maisteriksi valmistunut Dunkel on soittanut vakituisesti UMO:ssa vuodesta 1994 lähtien. Dunkel on vaikuttanut lukuisissa suomalaisissa yhtyeissä ja johtanut omaa kvartettiaan -90-luvun lopulta lähtien. Hän on julkaissut 7 sooloalbumia ja on mukana yli 70:llä albumilla. Dunkel on esiintynyt yli 30:ssä maassa. Hän on konsertoinut useiden kansanvälisesti merkittävien jazzmuusikoiden kanssa kuten Paul Jackson\, Rick Margitza\, Eric Truffaz ja Kenny Wheeler. Suomen Jazzliitto myönsi Dunkelille Yrjö-palkinnon vuonna 2011.  Manuel Dunkel\, saksofoni\, Lassi Kouvo\, piano. 
+LOCATION:The Tower Wine and Craft Beer\, Firdonkatu 2B\, Helsinki\, FI
+UID:20260523T140000Z-8760-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260523T140000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260523T140000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Reiska Laine Quartet at Kalevan Navetta
+DESCRIPTION:Price: 30/25/15 €. Notes: Jari Perkiömäki – saksofoni\, Riitta Paakki – piano\, Mikael Saastamoinen – basso\, Reiska Laine – rummut\, feat. Heta Halonen – laulu. Jazzlegenda Reiska Laineen luotsaama kvartetti täyttää Hugosalin esittämällä etupäässä amerikkalaisen jazzlaulaja ja  -pianisti Blossom Dearien ohjelmistoa solistina  tangokuningattarenakin tunnettu jazzlaulaja Heta Halonen. 
+LOCATION:Kalevan Navetta\, Nyykoolinkatu 25\, Seinäjoki\, FI
+UID:20260523T140000Z-8861-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260523T140000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260523T140000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Sid Hille at Temppeliaukion kirkko
+DESCRIPTION:Price: vierailumaksu. Notes: Pianisti Sid Hille soittaa monipuolista\, meditatiivista musiikkia kirkon flyygelillä. Konsertissa kuullaan sekä artistin omaa että muiden tuotantoa. Kirkon aulassa on myynnissä Hillen levytuotantoa\, muun muassa Temppeliaukiolla nauhoitetut CD:t. 
+LOCATION:Temppeliaukion kirkko\, Lutherinkatu 3\, Helsinki\, FI
+UID:20260526T071500Z-9075-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260526T071500Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260526T071500Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Sörkan Ruusu Weekly Jazz Session at Musiikkitalo
+DESCRIPTION:
+LOCATION:Musiikkitalo\, Mannerheimintie 13\, Helsinki\, FI
+UID:20260526T150000Z-8995-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260526T150000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260526T150000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Tuomas Paukku at Villa Rana
+DESCRIPTION:Price: Vapaa pääsy. Notes: Villa Ranan kitaratuokiot. Tuomas Paukku - kitara. 
+LOCATION:Villa Rana\, Seminaarinkatu 13\, Jyväskylä\, FI
+UID:20260526T150000Z-9110-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260526T150000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260526T150000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Pekka Toivanen Quartet & Jenny Robson at Kuopion Musiikkikeskus
+DESCRIPTION:Price: 20/15 €. Notes: Kuopio Jazz &amp\; Blues. "Andania Blues". Pekka Toivanen – saksofoni\, Janne Maarala – piano\, Wade Mikkola – basso\, Heikki Sandrén -rummut\, Jenny Robson – laulu. 
+LOCATION:Kuopion Musiikkikeskus\, Kuopionlahdenkatu 23\, Kuopio\, FI
+UID:20260527T160000Z-8966-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260527T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260527T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Manala Afterwork Jazz feat. Teemu Viinikainen at Ravintola Manala
+DESCRIPTION:Price: Vapaa pääsy. Notes: Afterwork Jazz on vuonna 2018 perustettu\, viikoittainen jazzklubi Helsingin ydinkeskustassa. Syys- ja kevätkaudella joka torstai Manalan baari muuttuu New Yorkin mutkattomien jazzravintoloiden inspiroimaksi tunnelmalliseksi kapakaksi\, jossa yhdistyvät kursailemattomat puitteet\, korkealaatuinen musiikki sekä pirullisen hyvä ruoka ja juoma.  Konsertteihin on aina vapaa pääsy\, joten voit kävellä sisään ja ulos miten mielit! Hyvän istumapaikan halutessaan on kuitenkin hyvä idea tulla paikalle ajoissa. Soitto soi torstaisin klo 17-19. Tarkista seuraavan Afterwork Jazzin ajankohta tapahtumakalenteristamme Bottan sivuilta. Manala House Trio: Arto Ikävalko – piano\, Joonas Tuuri – basso\, Ville Luukkonen – rummut. 
+LOCATION:Ravintola Manala\, Dagmarinkatu 2\, Helsinki\, FI
+UID:20260528T140000Z-8953-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260528T140000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260528T140000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Juho Valjakka Trio at Ravintola Poppari
+DESCRIPTION:Price: 15/10 €\, kannatuslippu 30 €. Notes: Jazz Jkl Live. Nuoren jazzsukupolven kärkipianisteihin noussut Juho Valjakka esiintyy sävykkään trionsa kanssa Jazz Jkl Live -konserttisarjassa juhlistaen kokoonpanon uunituoreen toisen albumin julkaisua.  Luovasta ja näkemyksellisestä pianismistaan tunnettu Juho Valjakka on yksi kysytyimmistä nuorista suomalaisista jazzpianisteista. Uransa varrella Valjakka on esiintynyt monien huippuyhtyeiden riveissä (mm. Lassy–Eskola Nordic Stew\, UMO Helsinki Jazz Orchestra\, Riikka Keränen sekä Tuomas Paukku Scription) sekä konsertoinut merkittävien kotimaisten festivaalien ohella myös arvostetuilla jazzklubeilla Euroopassa. Vuonna 2018 yhdessä kontrabasisti Oskari Siirtolan ja rumpali Anssi Tirkkosen kanssa perustettu Juho Valjakka Trio keskittyy pääasiassa Valjakan omien sävellysten esittämiseen ja on kerännyt kiitosta tyylikkään viimeistellystä ilmaisusta sekä rikkaasta sävyjen kirjosta.  Yhtyeen ensimmäinen albumi ”Liminal Spaces” (2022) huomioitiin Jazz Emma -ehdokkuudella. Toukokuussa julkaistavalla ”Lines in Patterns” -levyllä trio heittäytyy vaivattomasti soljuvan yhteissoitton kautta harmonisesti rikkaiden sävellysten maailmaan sekä tulkitsee kahden kappaleen verran Valjakalle tärkeän esikuvan\, pianisti Bill Evansin musiikkia. Juho Valjakka – piano\, Oskari Siirtola – kontrabasso\, Anssi Tirkkonen – rummut. 
+LOCATION:Ravintola Poppari\, Puistokatu 2-4\, Jyväskylä\, FI
+UID:20260529T160000Z-9103-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260529T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260529T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Clarion Living Room Jazz at Clarion Living Room Bar & Terrace
+DESCRIPTION:Price: Vapaa pääsy. Notes: Rami Eskelinen\, Tuomo Purhonen ja Lassi Kouvo + jazzjamit.  Clarionin jazzeilla 30.5. esiintyvä Rami Eskelinen on Jazzliiton Yrjö-palkinnollakin palkittu rumpali\, joka on tunnettu muun muassa Trio Töykeistä. Bassoa soittaa nuori nouseva kontrabasisti Tuomo Purhonen ja pianoa klubi-isäntä Lassi Kouvo.    Keikka alkaa klo 17\, jazzjamit housebandin setin jälkeen klo 18. Tervetuloa nauttimaan jazzista merellisissä maisemissa! 
+LOCATION:Clarion Living Room Bar & Terrace\, Tyynenmerenkatu 2\, Helsinki\, FI
+UID:20260530T140000Z-9107-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260530T140000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260530T140000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Joonas Haavisto Trio at Hakasalmen huvila
+DESCRIPTION:Price: 22 €\, eläkeläiset\, työttömät ja Helsinki Jazz ry:n jäsenet 17€\, opiskelijat 14 €\, kahdelle 17 + 17 €.. Notes: jaZZanti. Joonas Haavisto: piano\; Antti Lötjönen: kontrabasso ja Joonas Riippa: rummut. 
+LOCATION:Hakasalmen huvila\, Mannerheimintie 13b\, Helsinki\, FI
+UID:20260601T160000Z-9002-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260601T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260601T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Bar Favelan Tiistaijatsit at Bar Favela
+DESCRIPTION:Price: Vapaa pääsy. Notes: Maija Kauhanen\, kantele\, lyömäsoittimet ja laulu\,  Mikko Innanen\, ainakin saksofonit. 
+LOCATION:Bar Favela\, Mechelininkatu 13\, Helsinki\, FI
+UID:20260602T160000Z-9010-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260602T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260602T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Manala Afterwork Jazz at Ravintola Manala
+DESCRIPTION:Price: Vapaa pääsy. Notes: Afterwork Jazz on vuonna 2018 perustettu\, viikoittainen jazzklubi Helsingin ydinkeskustassa. Syys- ja kevätkaudella joka torstai Manalan baari muuttuu New Yorkin mutkattomien jazzravintoloiden inspiroimaksi tunnelmalliseksi kapakaksi\, jossa yhdistyvät kursailemattomat puitteet\, korkealaatuinen musiikki sekä pirullisen hyvä ruoka ja juoma.  Konsertteihin on aina vapaa pääsy\, joten voit kävellä sisään ja ulos miten mielit! Hyvän istumapaikan halutessaan on kuitenkin hyvä idea tulla paikalle ajoissa. Soitto soi torstaisin klo 17-19. Tarkista seuraavan Afterwork Jazzin ajankohta tapahtumakalenteristamme Bottan sivuilta. Manala House Trio: Arto Ikävalko – piano\, Joonas Tuuri – basso\, Ville Luukkonen – rummut. 
+LOCATION:Ravintola Manala\, Dagmarinkatu 2\, Helsinki\, FI
+UID:20260604T140000Z-8954-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260604T140000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260604T140000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Suhina-klubi at Äänen Lumo
+DESCRIPTION:Price: 15/8 €. Notes: Camila Nebbia\, Chris Corsano &amp\; Jukka Kääriäinen. Suhina Klubi on Helsingissä järjestettävä tapahtumasarja\, joka tarjoaa improvisoitua ja kokeellista musiikkia sekä äänitaidetta. 
+LOCATION:Äänen Lumo\, Nokiankatu 2-4\, Helsinki\, FI
+UID:20260604T160000Z-9039-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260604T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260604T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selma Savolainen at G Livelab
+DESCRIPTION:Price: 24 € + 4 € eteismaksu. Notes: "In the shade". Ennakkoluulottomasta musiikintekijyydestään ja vaikuttavasta äänenkäytöstään tunnettu Selma Savolainen on yksi suomalaisen jazzin kirkkaimmista tähdistä. Helsingin Sanomat on kuvaillut häntä artistiksi\, joka on nostanut suomalaisen laulujazzin uudelle tasolle. Hänen englanninkielisiä sävellyksiään leimaa modernin jazzin ja vaihtoehtoisen singer-songwriter -perinteen kiehtova yhdistelmä. Vuoden 2024 Emma-gaalassa juhlittiin Savolaisen esikoisalbumin\, Horror Vacuin\, voittamaa Jazz-Emmaa. Keväällä 2026 brittiläinen Whirlwind Recordings julkaisee laulaja-säveltäjän toisen albumin in the shade\, joka vie Savolaisen johtaman kuusihenkisen yhtyeen ilmaisua ronskiin ja ulospäin katsovaan suuntaan. Albumi ammentaa vaikutteita 2000-luvun alun brittipunkista ja brasilialaisen música popularin kultakaudesta\, ja kappaleiden teemat ulottuvat vanhemmuudesta vihaisiin miehiin ja massahysteriaan. In the shade jatkaa Horror Vacui -levyltä ja keikoilta tutun kuusikon yhteistyötä\, jossa raivataan tilaa rouhealle yhteissoitolle ja valovoimaiselle ilmaisulle.  Selma Savolainen in the shade tuo lavalle joukon Suomen eturivin muusikoita – yhtyeessä soittavat Selma Savolainen (laulu)\, Tomi Nikku (trumpetti)\, Max Zenger (klarinetit)\, Toomas Keski-Säntti (piano)\, Eero Tikkanen (kontrabasso) ja Okko Saastamoinen (rummut).  Keikka on ikärajaton. 
+LOCATION:G Livelab\, Pieni Roobertinkatu 16\, Helsinki\, FI
+UID:20260604T160000Z-9062-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260604T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260604T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Harri Kuusijärvi Aallot at Ravintola Poppari
+DESCRIPTION:Price: 15/10 €\, kannatuslippu 30 €. Notes: Jazz Jkl Live. Harmonikkataiteilija Harri Kuusijärvi on yhdistänyt kehittämänsä elektronisesti laajennetun harmonikan akustiseen komppisektioon. Lopputuloksena on omaperäisen pohjoismaista\, minimalistisen maanläheistä ja sähköisesti groovaavaa musiikkia! Aallot-yhtyeessä harmonikkataiteilija Harri Kuusijärvi yhdistää uuden elektronisesti laajennetun harmonikkansa basisti Jori Huhtalan ja rumpali Mika Kallion muodostaman jazz-rytmisektion akustiseen lämpöön. Trion ilmaisusta löytyy mm. pohjoismaista seesteisyyttä\, kuplivaa jazzia ja vapaita improvisaatioita. Tuloksena on musiikkia\, joka on maanläheistä\, minimalistista ja sähköisesti groovaavaa. Yhtyeen ensimmäinen studiosessio radioitiin YLE Jazzklubi -ohjelmassa kesäkuussa 2024. Debyyttialbumi “Aallot” julkaistiin vuonna 2025 Flame Jazz Records -yhtiön kautta.  Harri Kuusijärvi on uuden harmonikkamusiikin omaleimaisimpia tekijöitä. Hän on kantaesittänyt lukuisia harmonikalle sävellettyjä nykymusiikkiteoksia\, esiintynyt rytmimusiikin saralla lukuisten artistien kanssa ja kerännyt albumeillaan kiittäviä arvioita yli genrerajojen. Suomen Harmonikkaliitto valitsi Kuusijärven Vuoden harmonikkataiteilijaksi 2023 todeten perusteluissa\, että ”Kuusijärvi on ennakkoluulottomilla projekteillaan laajentanut käsitystä siitä\, mihin kaikkeen harmonikka voi soittimena taipua”. Harri Kuusijärvi – harmonikka\, Jori Huhtala – basso\, Mika Kallio – rummut. 
+LOCATION:Ravintola Poppari\, Puistokatu 2-4\, Jyväskylä\, FI
+UID:20260604T160000Z-9104-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260604T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260604T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Sami Saari & Jazzpojat at G Livelab
+DESCRIPTION:Price: 30 € + 4 € eteispalvelumaksu. Notes: Sami Saari ja Jazzpojat -yhtyeen musiikki on korvia hivelevää ja tanssittavan svengaavaa jazzia ja soulia meiltä ja muualta. Suomalaisen soulmusiikin pienviljelijänä ja suurkuluttajana tunnettu Saari on aina ollut sielultaan jazzmies ja on siitä syystä koonnut yhtyeen\, jossa jazzpoikien vahva solismi sekä pettämätön svengi yhdistävät voimansa karismaattisen solistin kanssa. Saaren kekseliäät ja puhuttelevat suomenkieliset sanoitukset tuovat samaistumispintaa ihan jokaiselle! Vuonna 2026 yhtye juhlii kymmenvuotista taivaltaan. 
+LOCATION:G Livelab\, Pieni Roobertinkatu 16\, Helsinki\, FI
+UID:20260605T170000Z-8937-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260605T170000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260605T170000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Tiilitehdas Jazz at Ravintola Tiilitehdas
+DESCRIPTION:Price: Vapaa pääsy. Notes: Tri Tolvanen\, Ville Luukkonen ja Lassi Kouvo + jazzjamit . Ravintola Tiilitehtaan terassilla (sateen sattuessa sisällä) järjestetään kesällä 2026 kolme jazzkonserttia\, jotka jatkuvat avoimilla jazzjameilla. Sunnuntaina 7.6. lavalle nousevat Tri Tolvanen\, urut ja laulu\, Ville Luukkonen\, rummut\, Lassi Kouvo\, piano. Urkurilaulaja Tri Tolvanen yhtyeineen tarjoilee täyden kattauksen jazzia ja bluesia New Orleansin hengessä - ripauksella Amerikan ja Suomen Chicagoja sekä Kymijoen deltaa. Konsertti alkaa klo 14\, jazzjamit klo 15. Tervetuloa nauttimaan svengaavasta musiikista sekä baarin ja ravintolan antimista! Tuusulan kunnan tukema tapahtuma. Ravintola Tiilitehdas sijaitsee Jokelan aseman välittömässä läheisyydessä (HSL-vyöhyke D). Tiilitehdas Jazz myös 19.7. ja 2.8. klo 14 alkaen. 
+LOCATION:Ravintola Tiilitehdas\, Nukarintie 5\, Tuusula\, FI
+UID:20260607T110000Z-9112-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260607T110000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260607T110000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Mikael Saastamoinen at Hakasalmen huvila
+DESCRIPTION:Price: 22 €\, eläkeläiset\, työttömät ja Helsinki Jazz ry:n jäsenet 17€\, opiskelijat 14 €\, kahdelle 17 + 17 €.. Notes: jaZZanti. Mikael Saastamoinen: kontrabasso. 
+LOCATION:Hakasalmen huvila\, Mannerheimintie 13b\, Helsinki\, FI
+UID:20260608T160000Z-9003-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260608T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260608T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Juli Wood & Wade Mikkola Trio at Teerenpeli
+DESCRIPTION:Price: 15/10 €\, jameihin vapaa pääsy. Notes: Lahti Jazz Club. Keikka + jamit klo 21. 
+LOCATION:Teerenpeli\, Vapaudenkatu 20\, Lahti\, FI
+UID:20260609T160000Z-8926-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260609T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260609T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Tasavallan Presidentti Complete at Tavastiaklubi
+DESCRIPTION:Price: 42/39 €. Notes: Tasavallan Presidentti on suomalaisen progressiivisen rockin kivijalka – 70-luvulla kansainväliseen kulttimaineeseen noussut yhtye\, jonka omaleimainen fuusiorock ja virtuoosimainen soitto tekevät siitä edelleen suomalaisen progerockin jättiläisen. Perustajajäsenet Vesa Aaltonen ja Jukka Tolonen ovat koonneet tämän päivitetyn bändin uuden sukupolven huippumuusikoista ja vierailijoiksi on kutsuttu Wigwamista tuttu Jukka Gustavson sekä upeaääninen Ella Tepponen. Tasavallan Presidentti Complete esittää keikkakokonaisuudessaan Pressojen voimallisimpien teosten lisäksi muitakin suomiprogen legendaarisimpia kappaleita. 
+LOCATION:Tavastiaklubi\, Urho Kekkosen katu 6\, Helsinki\, FI
+UID:20260609T170000Z-8918-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260609T170000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260609T170000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Manala Afterwork Jazz at Ravintola Manala
+DESCRIPTION:Price: Vapaa pääsy. Notes: Afterwork Jazz on vuonna 2018 perustettu\, viikoittainen jazzklubi Helsingin ydinkeskustassa. Syys- ja kevätkaudella joka torstai Manalan baari muuttuu New Yorkin mutkattomien jazzravintoloiden inspiroimaksi tunnelmalliseksi kapakaksi\, jossa yhdistyvät kursailemattomat puitteet\, korkealaatuinen musiikki sekä pirullisen hyvä ruoka ja juoma.  Konsertteihin on aina vapaa pääsy\, joten voit kävellä sisään ja ulos miten mielit! Hyvän istumapaikan halutessaan on kuitenkin hyvä idea tulla paikalle ajoissa. Soitto soi torstaisin klo 17-19. Tarkista seuraavan Afterwork Jazzin ajankohta tapahtumakalenteristamme Bottan sivuilta. Manala House Trio: Arto Ikävalko – piano\, Joonas Tuuri – basso\, Ville Luukkonen – rummut. 
+LOCATION:Ravintola Manala\, Dagmarinkatu 2\, Helsinki\, FI
+UID:20260611T140000Z-8955-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260611T140000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260611T140000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Jazz Jkl Collective at Ravintola Poppari
+DESCRIPTION:Price: 15/10 €\, kannatuslippu 30 €. Notes: Torstain jazzklubi. Jazz Jkl Collective feat. Kasperi Sarikoski. Lyhyttä kesätaukoa edeltävällä Torstain jazzklubilla Jazz Jkl Collective ja pasunisti Kasperi Sarikoski tulkitsevat mm. Joe Hendersonin\, Wayne Shorterin ja Chick Corean sävelkynistä syntyneitä moderneja jazzklassikoita!  Nykyinen UMO Helsinki Jazz Orchestran ykköspasunisti Kasperi Sarikoski (s. 1988) nousi kotimaan jazzpiirien tietoisuuteen superlahjakkuutena jo reilusti alaikäisenä. Sarikoski suoritti ensimmäisenä suomalaisena jazzmuusikkona jatko-opintonsa korkealle arvostetussa Juilliard Schoolissa New Yorkissa. Instrumenttinsa suvereeni virtuoosi on esiintynyt ja levyttänyt mm. Teppo Mäkysen Teddy’s West Coasters -yhtyeen\, Ricky-Tick Big Bandin\, Duke Ellington Orchestran\, Stockholm Jazz Orchestran ja trumpetisti Wynton Marsaliksen kanssa sekä julkaissut säveltäjänä ja bändinjohtajana kaksi albumia. 1960-luvulla jazzmusiikki kehittyi samanaikaisesti useaan suuntaan. Ajan jazzmodernismin keskeisimpiä säveltäjiä olivat mm. saksofonistit John Coltrane\, Joe Henderson\, Wayne Shorter sekä pianistit Herbie Hancock\, Chick Corea ja McCoy Tyner. Jazz Jkl Collectiven ja Sarikosken kohtaamisessa herkutellaan tämän aikakauden tyylikkäillä jazzklassikoilla. Kasperi Sarikoski – pasuuna\, Tuomas Paukku – kitara\, Marian Petrescu – piano\, Petri Jaakonaho – basso\, Kasper Halttunen – rummut. 
+LOCATION:Ravintola Poppari\, Puistokatu 2-4\, Jyväskylä\, FI
+UID:20260611T160000Z-9105-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260611T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260611T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Clarion Living Room Jazz at Clarion Living Room Bar & Terrace
+DESCRIPTION:Price: Vapaa pääsy. Notes: Mathias Sandberg ja Lassi Kouvo. Clarionin jazzien vierailevana tähtenä jazzkitaristi ja säveltäjä Mathias Sandberg\, jota amerikkalaisessa musiikkilehdessä Jazziz Magazine on kutsuttu "yhdeksi Suomen parhaiten varjelluista salaisuuksista". Hän on opiskellut New Yorkin Manhattan School of Musicissa ja Bostonin Berklee College of Musicissa\, ja työskennellyt mm. Georg Riedelin\, Jason Hunterin\, Peter Asplundin\, Nick Mancinin\, Jukka Eskolan\, Teppo Mäkysen ja Manuel Dunkelin kanssa. Sandberg tekee vuosittain satakunta jazzkonserttia ja on kiertänyt sekä Euroopassa että Yhdysvalloissa. Clarion Living Room Jazzeilla Sandberg esiintyy yhdessä klubi-isäntä pianisti Lassi Kouvon kanssa. Keikalla kuullaan Sandbergin ja Kouvon sävellyksiä sekä valikoituja jazzstandardeja.   Tervetuloa nauttimaan jazzista merellisissä maisemissa! 
+LOCATION:Clarion Living Room Bar & Terrace\, Tyynenmerenkatu 2\, Helsinki\, FI
+UID:20260613T140000Z-9108-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260613T140000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260613T140000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Josefiina Vannesluoma at Hakasalmen huvila
+DESCRIPTION:Price: 22 €\, eläkeläiset\, työttömät ja Helsinki Jazz ry:n jäsenet 17€\, opiskelijat 14 €\, kahdelle 17 + 17 €.. Notes: jaZZanti. Josefiina Vannesluoma: huilu ja laulu. 
+LOCATION:Hakasalmen huvila\, Mannerheimintie 13b\, Helsinki\, FI
+UID:20260615T160000Z-9004-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260615T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260615T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Tuomas Paukku at Villa Rana
+DESCRIPTION:Price: Vapaa pääsy. Notes: Villa Ranan kitaratuokiot. Tuomas Paukku - kitara. 
+LOCATION:Villa Rana\, Seminaarinkatu 13\, Jyväskylä\, FI
+UID:20260623T150000Z-9111-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260623T150000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260623T150000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Tiilitehdas Jazz at Ravintola Tiilitehdas
+DESCRIPTION:Price: Vapaa pääsy. Notes: Kaisa Mäensivu\, Joe Peri (USA) ja Lassi Kouvo + jazzjamit. Ravintola Tiilitehtaan terassilla (sateen sattuessa sisällä) järjestetään kesällä 2026 kolme jazzkonserttia\, jotka jatkuvat avoimilla jazzjameilla. Sunnuntaina 19.7. Tiilitehtaalle saadaan huippukomppipari New Yorkista: Kaisa Mäensivu\, kontrabasso\, Joe Peri (USA)\, rummut\, Lassi Kouvo\, piano. Hämeenlinnalaislähtöinen sittemmin New Yorkiin kotoutunut Kaisa Mäensivu kuuluu Suomen kansainvälisesti menestyneimpiin jazzmuusikoihin. Kaisan Taking Shape -albumi nostettiin vuoden 2023 parhaiden jazzalbumien joukkoon legendaarisessa DownBeat -lehdessä.  Newyorkilainen rumpali Joe Peri on soittanut muun muassa Tony Bennettin ja Lady Gagan Grammy -palkitulla albumilla Love For Sale.  Tuusulalainen Lassi Kouvo on ollut jo yli kymmenen vuoden ajan Suomen työllistetyimpiä jazzpianisteja. Hän myös opettaa Hyvinkään musiikkiopistossa pianon- ja bändisoittoa. 2026 vietetään suomalaisen jazzin juhlavuotta - amerikansuomalaisia matkailijoita kuljettaneen Andania-höyrylaivan sanotaan tuoneen jazzin Suomeen vuonna 1926. Juhlavuoden kunniaksi trio tarjoilee täyden kattauksen suomalaista jazzia. Lassi on tehnyt jazzsovituksia tutuista suomalaisista kappaleista. Keikan aikana kuullaan myös Kaisan ja Lassin omia sävellyksiä. Konsertti alkaa klo 14\, jazzjamit alkavat klo 15 jälkeen. Tervetuloa nauttimaan svengaavasta musiikista sekä baarin antimista! Tuusulan kunnan tukema tapahtuma. Ravintola Tiilitehdas sijaitsee Jokelan aseman välittömässä läheisyydessä (HSL-vyöhyke D). Tiilitehdas Jazz myös 2.8. klo 14 alkaen. 
+LOCATION:Ravintola Tiilitehdas\, Nukarintie 5\, Tuusula\, FI
+UID:20260719T110000Z-9113-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260719T110000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260719T110000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Imperial Quartet at Hakasalmen huvila
+DESCRIPTION:Price: 22 €\, eläkeläiset\, työttömät ja Helsinki Jazz ry:n jäsenet 17€\, opiskelijat 14 €\, kahdelle 17 + 17 €.. Notes: jaZZanti. “Dunav Magica”. Damien Sabatier: altto- ja sopraninosaksofonit\; Gérald Chevillon: tenorisaksofoni\; Joachim Florent: kontrabasso ja Antonin Leymarie: rummut. 
+LOCATION:Hakasalmen huvila\, Mannerheimintie 13b\, Helsinki\, FI
+UID:20260720T160000Z-9005-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260720T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260720T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Tiilitehdas Jazz at Ravintola Tiilitehdas
+DESCRIPTION:Price: Vapaa pääsy. Notes: Adele Sauros\, Joonas Tuuri\, Ville Luukkonen ja Lassi Kouvo + jazzjamit - Tiilitehdas Jazz  Ravintola Tiilitehtaan terassilla (sateen sattuessa sisällä) järjestetään kesällä 2026 kolme jazzkonserttia\, jotka jatkuvat avoimilla jazzjameilla. Sunnuntaina 2.8. lavalle nousevat  Adele Sauros\, saksofoni\, Lassi Kouvo\, piano\, Vesa Ojaniemi\, basso\, Henri Lintula\, rummut. Adele Sauros on yksi Suomen ja Euroopan jazzskenen aktiivisimmista saksofonisteista\, säveltäjistä ja yhtyeiden johtajista. Hänellä on useita yhtyeitä\, joiden kanssa hän keikkailee ympäri Eurooppaa\, kuten Adele Sauros Quartet\, Quite Vivian\, JAF Trio ja Jonathan Bäckström Quartet. Hänet on palkittu lukuisilla palkinnoilla ja vuonna 2021 hän sai Emma-palkinnon vuoden parhaasta jazz-albumista rumpali Olavi Louhivuoren kokoaman Superposition -yhtyeen kanssa. Basisti Vesa Ojaniemi soittaa Adelen albumilla Your Special Loss ja on tuttu muun muassa UMOn riveistä. Big Bandistaan tunnettu rumpali Henri Lintula on hakenut oppia rapakon takaa Bostonista ja tuusulalainen pianisti Lassi Kouvo tunnetaan aktiivisena tekijänä Suomen jazzkentällä. Kvartetti esittää jäseniensä omia sävellyksiä sekä tunnettuja jazzklassikoita kesäisellä svengillä. Konsertti alkaa klo 14\, jazzjamit alkavat klo 15 jälkeen. Tervettuloa nauttimaan svengaavasta musiikista sekä baarin ja ravintolan antimista! Tuusulan kunnan kunnan tukema tapahtuma. Ravintola Tiilitehdas sijaitsee Jokelan aseman välittömässä läheisyydessä (HSL-vyöhyke D). 
+LOCATION:Ravintola Tiilitehdas\, Nukarintie 5\, Tuusula\, FI
+UID:20260802T110000Z-9114-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20260802T110000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20260802T110000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Banned from Utopia at Promenadisali
+DESCRIPTION:Price: 49/25 €. Notes: Validi Karkia -klubi. Legendaariset Zappa-muusikot Ray White\, Chad Wackerman\, Scott Thunes ja Bobby Martin saapuvat Poriin ja Helsinkiin! Banned From Utopia esittää Frankin musiikkia superkokoonpanolla\, jonka originaliteettiprosentti on korkea. Sentraalisyynääjän hyväksyntä! BANNED FROM UTOPIA (USA) ‘We’re Only In It For The Euros’ - The European Tour 2025. Ray White - laulu\, kitara (Zappa 1976-1984)\, Robert "Bobby" Martin - laulu\, koskettimet\, puhaltimet (Zappa 1981-1988)\, Scott Thunes - basso\, laulu (Zappa 1981-1988)\, Chad Wackerman - rummut (Frank Zappa 1981-1988)\, Robbie Mangano - kitara\, laulu (GrandMothers of Invention\, Sean Lennon)\, Jamie Kime - kitara (Dweezil Zappa 'Zappa plays Zappa' 2007-2012). "The modern day composer refuses to die!" - oli säveltäjä Edgard Varèse'n slogan\, jota Frank Zappa useissa yhteyksissä lainasi ja suorastaan eli todeksi varhaiseen poismenoonsa 1993 asti\, vain 52-vuotiaana. Nyt yli 30 vuotta Zappan kuoleman jälkeen hänen musiikkinsa on enemmän elossa kuin koskaan.  Banned From Utopian kokoonpano koostuu neljästä pitkäaikaisimmasta ikonisesta Zappa-alumnista ja kahdesta korkean asteen Zappologista\, jotka yhdessä esittävät Frankin musiikkia uskomattomalla energialla ja pieteetillä. Banned From Utopian Ray White vieraili Zappan kanssa Helsingin Kulttuuritalolla 1977\, Chad Wackerman\, Bobby Martin ja Scott Thunes olivat kokoonpanossa viimeiseksi jääneen kiertueen Jäähalli-keikalla Helsingissä 1988. 
+LOCATION:Promenadisali\, Yrjönkatu 17\, Pori\, FI
+UID:20261020T160000Z-8721-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20261020T160000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20261020T160000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Banned from Utopia at Tavastiaklubi
+DESCRIPTION:Price: 45/42\,50 €. Notes: Legendaariset Zappa-muusikot Ray White\, Chad Wackerman\, Scott Thunes ja Bobby Martin saapuvat Poriin ja Helsinkiin! Banned From Utopia esittää Frankin musiikkia superkokoonpanolla\, jonka originaliteettiprosentti on korkea. Sentraalisyynääjän hyväksyntä! BANNED FROM UTOPIA (USA) ‘We’re Only In It For The Euros’ – The European Tour 2025. Ray White – laulu\, kitara (Zappa 1976-1984)\, Robert ”Bobby” Martin – laulu\, koskettimet\, puhaltimet (Zappa 1981-1988)\, Scott Thunes – basso\, laulu (Zappa 1981-1988)\, Chad Wackerman – rummut (Frank Zappa 1981-1988)\, Robbie Mangano – kitara\, laulu (GrandMothers of Invention\, Sean Lennon)\, Jamie Kime – kitara (Dweezil Zappa ’Zappa plays Zappa’ 2007-2012). ”The modern day composer refuses to die!” – oli säveltäjä Edgard Varèse’n slogan\, jota Frank Zappa useissa yhteyksissä lainasi ja suorastaan eli todeksi varhaiseen poismenoonsa 1993 asti\, vain 52-vuotiaana. Nyt yli 30 vuotta Zappan kuoleman jälkeen hänen musiikkinsa on enemmän elossa kuin koskaan. Banned From Utopian kokoonpano koostuu neljästä pitkäaikaisimmasta ikonisesta Zappa-alumnista ja kahdesta korkean asteen Zappologista\, jotka yhdessä esittävät Frankin musiikkia uskomattomalla energialla ja pieteetillä. Banned From Utopian Ray White vieraili Zappan kanssa Helsingin Kulttuuritalolla 1977\, Chad Wackerman\, Bobby Martin ja Scott Thunes olivat kokoonpanossa viimeiseksi jääneen kiertueen Jäähalli-keikalla Helsingissä 1988. 
+LOCATION:Tavastiaklubi\, Urho Kekkosen katu 6\, Helsinki\, FI
+UID:20261021T170000Z-8919-maene.sivustohallinnointi@gmail.com
+URL:http://u68792.www2.webdomain.fi/keikat
+DTSTART;VALUE=DATE-TIME;TZID=GMT:20261021T170000Z
+DTEND;VALUE=DATE-TIME;TZID=GMT:20261021T170000Z
+DTSTAMP:20260427T065826Z
+END:VEVENT
+END:VCALENDAR
