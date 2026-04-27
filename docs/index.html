@@ -5,9 +5,14 @@
   <title>Jazz Finland (unified)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 42em; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+    body { font-family: system-ui, sans-serif; max-width: 60em; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
     code { background: #f3f3f3; padding: 0.1em 0.3em; border-radius: 3px; }
+    #calendar { margin: 2em 0; }
+    .fc-event { cursor: pointer; }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@6.1.15/index.global.min.js"></script>
 </head>
 <body>
   <h1>Jazz Finland (unified)</h1>
@@ -18,6 +23,29 @@
     <li><strong>Apple Calendar:</strong> File &rarr; New Calendar Subscription &rarr; paste the URL.</li>
     <li><strong>Thunderbird:</strong> New Calendar &rarr; On the Network &rarr; iCalendar (ICS) &rarr; paste the URL.</li>
   </ul>
+  <div id="calendar" aria-label="Jazz Finland event calendar"></div>
   <p>Source: <a href="https://github.com/akaihola/jazz-calendar-finland">github.com/akaihola/jazz-calendar-finland</a></p>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cal = new FullCalendar.Calendar(document.getElementById('calendar'), {
+        initialView: 'listMonth',
+        headerToolbar: { left: 'prev,next today', center: 'title', right: 'listMonth,dayGridMonth' },
+        height: 'auto',
+        nowIndicator: true,
+        timeZone: 'Europe/Helsinki',
+        eventTimeFormat: { hour: '2-digit', minute: '2-digit', hour12: false },
+        slotLabelFormat: { hour: '2-digit', minute: '2-digit', hour12: false },
+        events: { url: 'calendar.ics', format: 'ics' },
+        eventClick: (info) => {
+          info.jsEvent.preventDefault();
+          const e = info.event;
+          const loc = e.extendedProps.location ? `\n\n${e.extendedProps.location}` : '';
+          const desc = e.extendedProps.description ? `\n\n${e.extendedProps.description}` : '';
+          alert(`${e.title}${loc}${desc}`);
+        },
+      });
+      cal.render();
+    });
+  </script>
 </body>
 </html>
