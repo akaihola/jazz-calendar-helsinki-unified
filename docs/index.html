@@ -5,37 +5,135 @@
   <title>Jazz Finland (unified)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 60em; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+    html, body { height: 100%; margin: 0; }
+    body { font-family: system-ui, sans-serif; line-height: 1.5; display: flex; flex-direction: column; }
+    .topbar {
+      position: sticky; top: 0; z-index: 10;
+      background: #fff; border-bottom: 1px solid #ddd;
+      padding: 0.5em 1em; display: flex; align-items: center; gap: 0.75em;
+    }
+    .topbar h1 { font-size: 1.1em; margin: 0; flex: 1; }
+    .topbar button {
+      font: inherit; cursor: pointer; background: none;
+      border: 1px solid #bbb; border-radius: 4px; padding: 0.2em 0.6em;
+    }
+    .info { padding: 0.5em 1em 0.75em; border-bottom: 1px solid #ddd; max-width: 60em; }
+    .info > :first-child { margin-top: 0; }
+    .info > :last-child { margin-bottom: 0; }
+    .info[hidden] { display: none; }
+    #calendar { flex: 1 1 auto; min-height: 0; padding: 0.5em 1em 1em; }
     code { background: #f3f3f3; padding: 0.1em 0.3em; border-radius: 3px; }
-    #calendar { margin: 2em 0; }
     .fc-event { cursor: pointer; }
+    /* Make the sticky day header opaque so it covers events scrolling under it.
+       FullCalendar makes `.fc-list-day > *` position:sticky; the cushion needs
+       its own opaque background and a stacking context above the event rows. */
+    .fc .fc-list-day > * {
+      background: #f3f3f3;
+      z-index: 2;
+    }
+    .fc .fc-list-day-cushion {
+      background: #f3f3f3;
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@6.1.15/index.global.min.js"></script>
 </head>
 <body>
-  <h1>Jazz Finland (unified)</h1>
-  <p>This project is developed by an AI coding agent (<a href="https://claude.ai/code">Claude Code</a>), with human oversight and direction.</p>
-  <p>Subscribe to the merged feed: <a href="calendar.ics">calendar.ics</a></p>
-  <ul>
-    <li><strong>Google Calendar:</strong> Other calendars &rarr; From URL &rarr; paste the <code>calendar.ics</code> URL.</li>
-    <li><strong>Apple Calendar:</strong> File &rarr; New Calendar Subscription &rarr; paste the URL.</li>
-    <li><strong>Thunderbird:</strong> New Calendar &rarr; On the Network &rarr; iCalendar (ICS) &rarr; paste the URL.</li>
-  </ul>
+  <header class="topbar">
+    <h1>Jazz Finland (unified)</h1>
+    <button type="button" id="info-toggle" aria-expanded="false" aria-controls="info">About &amp; subscribe</button>
+  </header>
+  <section class="info" id="info" hidden>
+    <p>This project is developed by an AI coding agent (<a href="https://claude.ai/code">Claude Code</a>), with human oversight and direction.</p>
+    <p>Subscribe to the merged feed: <a href="calendar.ics">calendar.ics</a></p>
+    <ul>
+      <li><strong>Google Calendar:</strong> Other calendars &rarr; From URL &rarr; paste the <code>calendar.ics</code> URL.</li>
+      <li><strong>Apple Calendar:</strong> File &rarr; New Calendar Subscription &rarr; paste the URL.</li>
+      <li><strong>Thunderbird:</strong> New Calendar &rarr; On the Network &rarr; iCalendar (ICS) &rarr; paste the URL.</li>
+    </ul>
+    <p>Source: <a href="https://github.com/akaihola/jazz-calendar-finland">github.com/akaihola/jazz-calendar-finland</a></p>
+  </section>
   <div id="calendar" aria-label="Jazz Finland event calendar"></div>
-  <p>Source: <a href="https://github.com/akaihola/jazz-calendar-finland">github.com/akaihola/jazz-calendar-finland</a></p>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('info-toggle');
+      const info = document.getElementById('info');
+      toggle.addEventListener('click', () => {
+        const open = info.hasAttribute('hidden') ? false : true;
+        if (open) {
+          info.setAttribute('hidden', '');
+          toggle.setAttribute('aria-expanded', 'false');
+        } else {
+          info.removeAttribute('hidden');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+        // Let FullCalendar recompute its scroll area after layout shifts.
+        if (window.__cal) window.__cal.updateSize();
+      });
+
+      const findScroller = (root) => {
+        for (const el of root.querySelectorAll('.fc-scroller')) {
+          if (el.scrollHeight > el.clientHeight) return el;
+        }
+        return root.querySelector('.fc-scroller');
+      };
+
+      const scrollScrollerToTop = () => {
+        const scroller = findScroller(document.getElementById('calendar'));
+        if (scroller) scroller.scrollTop = 0;
+      };
+
+      const scrollTodayIntoView = () => {
+        const root = document.getElementById('calendar');
+        const today = root.querySelector('.fc-day-today');
+        if (!today) return false;
+        const scroller = today.closest('.fc-scroller') || findScroller(root);
+        if (scroller) {
+          const delta = today.getBoundingClientRect().top - scroller.getBoundingClientRect().top;
+          scroller.scrollTop += delta;
+        } else {
+          today.scrollIntoView({ block: 'start', behavior: 'auto' });
+        }
+        return true;
+      };
+
+      // In listMonth, the today row only exists once events have been rendered,
+      // so `datesSet` may fire before `.fc-day-today` is in the DOM. We defer
+      // the scroll until `eventsSet` runs (or fall back to a couple of frames).
+      let pendingScrollToToday = false;
+      const tryScrollToToday = (attempts = 5) => {
+        if (scrollTodayIntoView()) return;
+        if (attempts > 0) requestAnimationFrame(() => tryScrollToToday(attempts - 1));
+      };
+
       const cal = new FullCalendar.Calendar(document.getElementById('calendar'), {
         initialView: 'listMonth',
-        headerToolbar: { left: 'prev,next today', center: 'title', right: 'listMonth,dayGridMonth' },
-        height: 'auto',
+        headerToolbar: { left: 'prev,next goToday', center: 'title', right: 'listMonth,dayGridMonth' },
+        height: '100%',
+        stickyHeaderDates: true,
         nowIndicator: true,
         timeZone: 'Europe/Helsinki',
         eventTimeFormat: { hour: '2-digit', minute: '2-digit', hour12: false },
         slotLabelFormat: { hour: '2-digit', minute: '2-digit', hour12: false },
         events: { url: 'calendar.ics', format: 'ics' },
+        customButtons: {
+          goToday: {
+            text: 'today',
+            click: () => {
+              const view = cal.view;
+              const now = new Date();
+              const inRange = now >= view.activeStart && now < view.activeEnd;
+              if (inRange) {
+                // Already on the current month — just re-scroll today into view.
+                tryScrollToToday();
+              } else {
+                pendingScrollToToday = true;
+                cal.today();
+              }
+            },
+          },
+        },
         eventClick: (info) => {
           info.jsEvent.preventDefault();
           const e = info.event;
@@ -43,7 +141,23 @@
           const desc = e.extendedProps.description ? `\n\n${e.extendedProps.description}` : '';
           alert(`${e.title}${loc}${desc}`);
         },
+        datesSet: (arg) => {
+          const now = new Date();
+          if (now >= arg.view.activeStart && now < arg.view.activeEnd) {
+            pendingScrollToToday = true;
+          } else {
+            pendingScrollToToday = false;
+            requestAnimationFrame(scrollScrollerToTop);
+          }
+        },
+        eventsSet: () => {
+          if (pendingScrollToToday) {
+            pendingScrollToToday = false;
+            requestAnimationFrame(() => tryScrollToToday());
+          }
+        },
       });
+      window.__cal = cal;
       cal.render();
     });
   </script>
