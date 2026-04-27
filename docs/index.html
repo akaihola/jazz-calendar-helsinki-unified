@@ -34,6 +34,35 @@
     .fc .fc-list-day-cushion {
       background: #f3f3f3;
     }
+    .fc-list-event-location {
+      padding: 8px 14px;
+      white-space: nowrap;
+      color: #555;
+    }
+    /* The location column's nowrap text pushes the list table past the viewport
+       width on narrow screens; allow the scroller to scroll horizontally so the
+       location and the day-separator weekday remain reachable. FullCalendar
+       sets `overflow: hidden auto` inline, so override with !important. */
+    .fc .fc-list .fc-scroller { overflow-x: auto !important; }
+    /* Pin the weekday name (right side of each day separator) to the right edge
+       of the visible scroll area instead of the right edge of the wider table. */
+    .fc .fc-list-day-cushion {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .fc .fc-list-day-cushion::after { display: none; }
+    .fc-direction-ltr .fc-list-day-text,
+    .fc-direction-ltr .fc-list-day-side-text { float: none; }
+    .fc .fc-list-day-side-text {
+      position: sticky;
+      right: 14px;
+    }
+    @media (max-width: 700px) {
+      .fc .fc-toolbar.fc-header-toolbar { margin-bottom: 0.75em; }
+      .fc .fc-toolbar-title { font-size: 1.1em; white-space: nowrap; }
+      .fc .fc-button { padding: 0.25em 0.5em; font-size: 0.9em; }
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js"></script>
@@ -136,6 +165,15 @@
             },
           },
         },
+        eventDidMount: (info) => {
+          if (!info.view.type.startsWith('list')) return;
+          const row = info.el;
+          if (row.querySelector('.fc-list-event-location')) return;
+          const td = document.createElement('td');
+          td.className = 'fc-list-event-location';
+          td.textContent = info.event.extendedProps.location || '';
+          row.appendChild(td);
+        },
         eventClick: (info) => {
           info.jsEvent.preventDefault();
           const e = info.event;
@@ -153,6 +191,10 @@
           }
         },
         eventsSet: () => {
+          // Day separator <th> uses colspan=3 by default; extend it to cover
+          // the injected location column so the gray band spans the full row.
+          document.querySelectorAll('#calendar .fc-list-day > th[colspan]')
+            .forEach((th) => th.setAttribute('colspan', '4'));
           if (pendingScrollToToday) {
             pendingScrollToToday = false;
             requestAnimationFrame(() => tryScrollToToday());
