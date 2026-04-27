@@ -19,7 +19,7 @@ If you (a future Claude Code session) are picking this plan up cold, do this in 
 3. Read this plan and run `git log --oneline -- docs/superpowers/plans/2026-04-27-jazz-calendar-merger.md src/ tests/ .github/` to see what has already been committed.
 4. Look at this file (`docs/superpowers/plans/2026-04-27-jazz-calendar-merger.md`) — completed tasks have `[x]` checkboxes; resume at the first `[ ]`.
 5. Captured upstream samples used by tests live under `tests/fixtures/` once Chunk 1 is done. They are byte snapshots, not regenerated automatically.
-6. Bootstrap (Chunk 10) is the only chunk that mutates anything outside the repo. Skip Chunk 10 entirely if both `gh repo view akaihola/jazz-calendar-helsinki-unified` returns success **and** `gh api repos/akaihola/jazz-calendar-helsinki-unified/pages` returns an `html_url`. Otherwise run only the tasks whose preconditions are not yet met (each task in Chunk 10 carries its own idempotency check).
+6. Bootstrap (Chunk 10) is the only chunk that mutates anything outside the repo. Skip Chunk 10 entirely if both `gh repo view akaihola/jazz-calendar-helsinki-unified` returns success **and** `gh api repos/akaihola/jazz-calendar-helsinki-unified/pages` returns an `html_url`. Otherwise run only the tasks whose preconditions are not yet met: 10.1 and 10.3 carry explicit precondition guards in the task body; 10.2 and 10.4 are natively idempotent; 10.5 is a stateless smoke check.
 7. Network is required for Task 1.3 (capturing fixtures) and the manual smoke step in Task 8.2. Other tasks run offline. If network is unavailable when those tasks run, abort and surface the blockage to the user.
 
 **Discipline:** strict red/green TDD per [spec §8]. For every task: write the test first, run pytest and observe red, write the smallest implementation that makes it green, commit. Do not batch tests-and-implementation into one commit unless this plan says so.
@@ -224,7 +224,7 @@ Cover three behaviors:
 **Files:**
 - Create: `src/jazz_calendar/dedup.py`
 
-- [ ] Implement `default_prefer(event) -> int` and `dedup(events, *, prefer=default_prefer) -> list[Event]` per [spec §4.5]. Synthetic uniquifier for missing DTSTART/LOCATION should be `id(event)` or a counter.
+- [ ] Implement `default_prefer(event) -> int` and `dedup(events, *, prefer=default_prefer) -> list[Event]` per [spec §4.5]. Use a monotonic per-run counter as the synthetic uniquifier for events missing DTSTART/LOCATION (deterministic across runs, unlike `id()`).
 - [ ] Run pytest — green.
 - [ ] Commit: `feat(dedup): heuristic de-duplication keyed on (DTSTART, venue head)`.
 
@@ -318,7 +318,7 @@ Per [spec §3.4]. Minimal HTML: page title, the vibe-coded notice as `<p>` with 
 
 - [ ] On `push` and `pull_request` to `main`. Job runs on `ubuntu-latest`. Steps: `actions/checkout@v6`, `astral-sh/setup-uv@v8` (pin `version: 0.11.x`), `uv sync --frozen`, `uv run pytest -q`.
 - [ ] Commit: `ci: add pytest workflow`.
-- [ ] Verify locally with `act` if available, otherwise rely on the first push.
+- [ ] Optional non-blocking check: if `act` is installed, run it locally; otherwise rely on the first push to GitHub to validate the workflow.
 
 ### Task 9.2: Refresh workflow
 
