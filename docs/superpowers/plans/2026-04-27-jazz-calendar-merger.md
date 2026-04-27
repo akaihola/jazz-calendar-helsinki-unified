@@ -349,21 +349,21 @@ This chunk mutates external state (creates the public repo, enables Pages). Each
 
 ### Task 10.1: Create the GitHub repo
 
-- [ ] Precondition check: `gh repo view akaihola/jazz-calendar-helsinki-unified >/dev/null 2>&1` — if it succeeds, skip the create.
-- [ ] Otherwise: `gh repo create akaihola/jazz-calendar-helsinki-unified --public --source=. --push --description "Public iCalendar feed merging two Helsinki jazz calendars (vibe-coded)."`
-- [ ] Verify: `gh repo view akaihola/jazz-calendar-helsinki-unified` exits 0.
+- [x] Precondition check: `gh repo view akaihola/jazz-calendar-helsinki-unified >/dev/null 2>&1` — if it succeeds, skip the create.
+- [x] Otherwise: `gh repo create akaihola/jazz-calendar-helsinki-unified --public --source=. --push --description "Public iCalendar feed merging two Helsinki jazz calendars (vibe-coded)."`
+- [x] Verify: `gh repo view akaihola/jazz-calendar-helsinki-unified` exits 0.
 
 ### Task 10.2: Add topics
 
 `gh repo edit --add-topic` is idempotent (re-adding an existing topic is a no-op), so no precondition guard is needed.
 
-- [ ] `gh repo edit akaihola/jazz-calendar-helsinki-unified --add-topic vibe-coded --add-topic claude-code --add-topic icalendar --add-topic helsinki --add-topic jazz`.
+- [x] `gh repo edit akaihola/jazz-calendar-helsinki-unified --add-topic vibe-coded --add-topic claude-code --add-topic icalendar --add-topic helsinki --add-topic jazz`.
 
 ### Task 10.3: Enable GitHub Pages
 
 `gh api ... pages -X POST` returns 409 Conflict if Pages is already enabled, so guard explicitly:
 
-- [ ] If already enabled, skip:
+- [x] If already enabled, skip:
 
       if gh api repos/akaihola/jazz-calendar-helsinki-unified/pages 2>/dev/null | jq -e .html_url >/dev/null; then
         echo "Pages already enabled; skipping."
@@ -371,22 +371,22 @@ This chunk mutates external state (creates the public repo, enables Pages). Each
         gh api repos/akaihola/jazz-calendar-helsinki-unified/pages -X POST -f source.branch=main -f source.path=/docs
       fi
 
-- [ ] Wait ~30 s, then `gh api repos/akaihola/jazz-calendar-helsinki-unified/pages | jq .html_url` — should print the Pages URL.
+- [x] Wait ~30 s, then `gh api repos/akaihola/jazz-calendar-helsinki-unified/pages | jq .html_url` — should print the Pages URL.
 
 ### Task 10.4: First scheduled run
 
 This task is intentionally re-runnable — `workflow_dispatch` can be triggered any number of times.
 
-- [ ] `gh workflow run refresh.yml --repo akaihola/jazz-calendar-helsinki-unified`
-- [ ] Poll `gh run list --repo akaihola/jazz-calendar-helsinki-unified --workflow refresh.yml --limit 1` until status is `success` (or `failure` — investigate via `gh run view <id> --log`).
-- [ ] Confirm Pages build is built: `gh api repos/akaihola/jazz-calendar-helsinki-unified/pages/builds/latest | jq .status` — expect `"built"`.
-- [ ] `curl -sI https://akaihola.github.io/jazz-calendar-helsinki-unified/calendar.ics` — assert `HTTP/2 200` and `content-type` header is either `text/calendar` or `application/octet-stream` (both are acceptable for `.ics` on Pages).
-- [ ] Commit nothing (this task only triggers external state).
+- [x] `gh workflow run refresh.yml --repo akaihola/jazz-calendar-helsinki-unified`
+- [x] Poll `gh run list --repo akaihola/jazz-calendar-helsinki-unified --workflow refresh.yml --limit 1` until status is `success` (or `failure` — investigate via `gh run view <id> --log`).
+- [x] Confirm Pages build is built: `gh api repos/akaihola/jazz-calendar-helsinki-unified/pages/builds/latest | jq .status` — expect `"built"`.
+- [x] `curl -sI https://akaihola.github.io/jazz-calendar-helsinki-unified/calendar.ics` — assert `HTTP/2 200` and `content-type` header is either `text/calendar` or `application/octet-stream` (both are acceptable for `.ics` on Pages).
+- [x] Commit nothing (this task only triggers external state).
 
 ### Task 10.5: Smoke-subscribe check
 
-- [ ] `curl -s https://akaihola.github.io/jazz-calendar-helsinki-unified/ | grep -F "AI coding agent"` — expect a hit on the vibe-coded notice (browser optional).
-- [ ] Done.
+- [x] `curl -s https://akaihola.github.io/jazz-calendar-helsinki-unified/ | grep -F "AI coding agent"` — expect a hit on the vibe-coded notice (browser optional).
+- [x] Done.
 
 ---
 
