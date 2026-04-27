@@ -7,6 +7,13 @@ import unicodedata
 from datetime import datetime, timedelta, timezone
 
 _WS_RE = re.compile(r"\s+")
+_HOUSE_NUMBER_RE = re.compile(r"\b(\d+[a-z]?(?:-\d+[a-z]?)?)\b")
+_POSTAL_RE = re.compile(r"\b\d{5}\b")
+_VENUE_TRAILING_RE = re.compile(
+    r"(?:\s+(?:ry|oy|ay|ab|ltd))$"
+    r"|(?:\s+\d+\.?\s*krs\.?)$"
+    r"|(?:\s+(?:1st|2nd|3rd)\s*floor)$"
+)
 
 
 def _strip_diacritics(s: str) -> str:
@@ -27,6 +34,72 @@ def normalize_location(loc: str) -> str:
     head = loc.split(",", 1)[0]
     head = _strip_diacritics(head).lower()
     return _collapse_ws(head)
+
+
+def normalize_venue(loc: str) -> str:
+    """Aggressively normalize the venue head for fuzzy bucketing.
+
+    Like ``normalize_location`` but also: replaces ``&`` with ``and``,
+    drops trailing legal/floor suffixes (``ry``, ``oy``, ``1.krs``…),
+    and collapses any non-alphanumeric run to a single space.
+    """
+    head = _strip_diacritics(loc.split(",", 1)[0]).lower()
+    head = head.replace("&", " and ")
+    head = re.sub(r"[^a-z0-9]+", " ", head)
+    head = _collapse_ws(head)
+    while True:
+        new = _VENUE_TRAILING_RE.sub("", head).strip()
+        if new == head:
+            break
+        head = new
+    return head
+
+
+def address_key(loc: str) -> tuple[str, str] | None:
+    """Extract a ``(house_number, city)`` key from a LOCATION string.
+
+    Returns ``None`` if either component cannot be identified. The house
+    number tolerates letter suffixes (``2b``) and ranges (``2-4``); the
+    city is the alphabetic portion of the segment carrying the postal
+    code, or — failing that — the segment immediately before a country
+    suffix (``FI``/``Suomi``).
+    """
+    segments = [_collapse_ws(s) for s in loc.split(",")]
+    house: str | None = None
+    for seg in segments:
+        m = _HOUSE_NUMBER_RE.search(seg)
+        if m and not _POSTAL_RE.fullmatch(m.group(1)):
+            house = m.group(1).lower()
+            break
+    if house is None:
+        return None
+    city: str | None = None
+    for seg in segments:
+        if _POSTAL_RE.search(seg):
+            stripped = _POSTAL_RE.sub("", seg).strip()
+            stripped = _strip_diacritics(stripped).lower()
+            stripped = re.sub(r"[^a-z]+", " ", stripped).strip()
+            if stripped:
+                city = stripped.split()[0]
+                break
+    if city is None:
+        for seg in reversed(segments):
+            low = _strip_diacritics(seg).lower().strip()
+            if low in {"fi", "suomi", "finland"}:
+                continue
+            low = re.sub(r"[^a-z]+", " ", low).strip()
+            if low:
+                city = low.split()[-1]
+                break
+    if city is None:
+        return None
+    return (house, city)
+
+
+def summary_tokens(s: str, *, min_len: int = 4) -> set[str]:
+    """Return the set of normalized word tokens of length ≥ ``min_len``."""
+    norm = re.sub(r"[^a-z0-9]+", " ", _strip_diacritics(s).lower())
+    return {tok for tok in norm.split() if len(tok) >= min_len}
 
 
 def normalize_summary(s: str) -> str:
