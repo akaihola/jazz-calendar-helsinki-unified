@@ -1,0 +1,2 @@
+- [validate_dedup script](validate_dedup_script.md) — `scripts/validate_dedup.py` runs full feeds through dedup and tables the cross-source same-minute survivors
+- [Use sd for mass replacement](feedback_mass_replace.md) — for project-wide renames, verify with `rg` then run `sd` instead of many Edit calls

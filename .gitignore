@@ -21,3 +21,6 @@ __pycache__/
 
 # Local fetched feeds (test artifacts)
 /tmp-feeds/
+
+# Per-machine Claude Code settings
+.claude/settings.local.json
